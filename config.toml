@@ -1,32 +1,35 @@
 baseurl = "http://thinkingco.de"
-languageCode = "en-us"
-title = "Ex chaos simplicitas - Thinking Code"
-
-canonifyurls = true
-
-[taxonomies]
-  category = "categories"
-  tag = "tags"
+MetaDataFormat = "yaml"
 
 [params]
   description = "Ex chaos simplicitas"
   author = "Tommaso Patrizi"
 
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+
 [[menu.main]]
-    name = "Tech Blog"
+    name = "Me"
     pre = "<i class='fa fa-download'></i>"
-    url = "/techblog/"
+    url = "/me/"
     weight = -200
+[[menu.main]]
+    name = "Technology"
+    pre = "<i class='fa fa-heart'></i>"
+    url = "/techblog/"
+    weight = -180
 [[menu.main]]
     name = "Notes"
     pre = "<i class='fa fa-cubes'></i>"
     url = "/notes/"
-    weight = -180
+    weight = -160
 [[menu.main]]
     name = "Portfolio"
     pre = "<i class='fa fa-comments'></i>"
     url = "/portfolio/"
-    weight = -150
+    weight = -140
 [[menu.main]]
     name = "Other Topics"
     pre = "<i class='fa fa-heart'></i>"
