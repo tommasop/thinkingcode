@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
     {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
-    {{ .Hugo.Generator }}
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>{{.Title}}</title>
@@ -30,14 +29,13 @@
             </div>
 
             <!--logo start-->
-            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v{{ .Hugo.Version }}</span></a>
+            <a href="/" class="logo"><img src="/img/hugo-logo.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;"></span></a>
             <!--logo end-->
             <div class="top-nav notification-row">
                 <!-- notification dropdown end-->
-                <div class="hidden-xs nav-github pull-right">
-                    <span rel="show-github" data-user="spf13" data-repo="hugo" data-type="follow"></span>
-                    <span rel="show-github" data-user="spf13" data-repo="hugo"></span>
-                    <span rel="show-github" data-user="spf13" data-repo="hugo" data-type="fork"></span>
+                <div class="hidden-xs pull-right">
+                    <a href="https://github.com/tommasop" class="fa fa-github">octocat</a>         
+                    <a href="https://twitter.com/tommasomatic" class="fa fa-twitter">twitter</a>
                 </div>
             </div>
 

@@ -2,17 +2,15 @@
 aliases:
 - /me/my-life/
 date: 2013-07-01
-linktitle: MyLife
+linktitle: My Life
 menu:
   main:
-    parent: me
+    parent: Me
 next: /me/my-job
 notoc: true
 title: My Life
-weight: 40
+weight: 30
 ---
-
-# Who I am
 
 My name is Tommaso and I live in Rome, Italy.
 

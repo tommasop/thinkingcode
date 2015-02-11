@@ -2,17 +2,15 @@
 aliases:
 - /me/my-job/
 date: 2013-07-01
-linktitle: MyJOb
+linktitle: My Job
 menu:
   main:
-    parent: me
+    parent: Me
 prev: /me/my-life
 notoc: true
 title: My Job
 weight: 40
 ---
-
-# My Job
 
 IT Freelance since 2001.
 

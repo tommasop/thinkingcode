@@ -12,22 +12,22 @@ MetaDataFormat = "yaml"
 
 [[menu.main]]
     name = "Me"
-    pre = "<i class='fa fa-download'></i>"
+    pre = "<i class='fa fa-male'></i>"
     url = "/me/"
     weight = -200
 [[menu.main]]
     name = "Technology"
-    pre = "<i class='fa fa-heart'></i>"
+    pre = "<i class='fa fa-code'></i>"
     url = "/techblog/"
     weight = -180
 [[menu.main]]
     name = "Notes"
-    pre = "<i class='fa fa-cubes'></i>"
+    pre = "<i class='fa fa-file-text-o'></i>"
     url = "/notes/"
     weight = -160
 [[menu.main]]
     name = "Portfolio"
-    pre = "<i class='fa fa-comments'></i>"
+    pre = "<i class='fa fa-briefcase'></i>"
     url = "/portfolio/"
     weight = -140
 [[menu.main]]
