@@ -32,7 +32,7 @@ body {
     width: 100%;
     min-height: 70%;
     position: relative;
-    background: url(../img/desk.jpg) no-repeat center center fixed;
+    background: url(../img/workshop.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -107,7 +107,7 @@ and (orientation : landscape) {
 }
 
 .point {
-    background: rgb(96,210,211);
+    background: rgb(77,125,155);
     padding: 50px 0;
     color: #ffffff;
 }
@@ -147,7 +147,7 @@ i.lead-icon:hover {
 }
 
 i.point-icon:hover {
-    color: rgb(22, 203, 230);
+    color: rgb(77, 125, 175);
     border: 3px solid #fff;
     background: #fff;
 }
@@ -254,6 +254,18 @@ footer a:hover {
 
 .btn-info:hover, .btn-primary:hover, .btn-success:hover {
     background: aliceblue;
+}
+
+.btn-tcode {
+  color: white;
+  background: rgb(77,125,155);
+  border-color: rgb(77,125,155);
+}
+
+.btn-tcode:hover {
+  color: rgb(77,125,155);
+  background: white;
+  border-color: rgb(77,125,155);
 }
 
 .owl-carousel blockquote {
