@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ex chaos simplicitas">
+    <meta name="author" content="Tommaso Patrizi">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <title>Multithreaded Rails App 4 REAL</title>
+
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style-responsive.css" rel="stylesheet" />
+    <link href="/css/monokai_sublime.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+  
+  <section id="container" class="">
+
+      
+      <header class="header black-bg">
+            <div class="toggle-nav">
+                <i class="fa fa-bars"></i>
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
+            </div>
+
+            
+            <a href="/" class="logo"><img src="/img/tcode-tr-sm.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;"></span></a>
+            
+            <div class="top-nav notification-row">
+                
+                <div class="hidden-xs pull-right">
+                    <a href="https://github.com/tommasop" class="fa fa-github">octocat</a>         
+                    <a href="https://twitter.com/tommasomatic" class="fa fa-twitter">twitter</a>
+                </div>
+            </div>
+
+            <div class="nav title-row" id="top_menu">
+                <h1 class="nav top-menu">Multithreaded Rails App 4 REAL</h1>
+            </div>
+      </header>
+      
+
+
+<aside>
+    <div id="sidebar" class="nav-collapse">
+        
+        <ul class="sidebar-menu">
+          
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-male'></i>
+                
+                <span>Me</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="http://thinkingco.de/me/my-life/">My Life</a> </li>
+                    
+                    <li><a href="http://thinkingco.de/me/my-job/">My Job</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="/techblog/">
+                    <i class='fa fa-code'></i>
+                    
+                    <span>Technology</span>
+                </a>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="/notes/">
+                    <i class='fa fa-file-text-o'></i>
+                    
+                    <span>Notes</span>
+                </a>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="/portfolio/">
+                    <i class='fa fa-briefcase'></i>
+                    
+                    <span>Portfolio</span>
+                </a>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="/blog/">
+                    <i class='fa fa-heart'></i>
+                    
+                    <span>Other Topics</span>
+                </a>
+              
+              </li>
+          
+
+        </ul>
+        
+    </div>
+</aside>
+
+
+
+      
+      <section id="main-content">
+          <section class="wrapper">
+
+              
+                  
+                      
+                      
+                          
+                          
+                          
+                      
+                      
+                  
+              
+
+              <div class="row">
+                  <div class="col-md-1">
+                      
+                      
+                      
+                  </div>
+                <div class="col-md-10">
+                    <section class="panel">
+                          
+                              
+                          
+                    <div class="panel-body">
+<script>
+(function() {
+  var cx = '004940163756227230940:9tdbvl9bwk4';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+    '//www.google.com/cse/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script>
+<gcse:search linktarget="_parent"></gcse:search>
+
+
+<p><a href="http://rubini.us/2013/10/04/rubinius-2-0-released/">Rubinius 2.0</a> (actually 2.1.1) is out and with it rails apps can finally be fully multithreaded taking advantage of multicore processors and substantially reducing memory consumption (<a href="http://miguelcamba.com/blog/2013/10/05/benchmarking-the-ruby-2-dot-1-and-rubinius-2-dot-0/">benchmark of latest ruby implementations</a>).</p>
+
+<p>Im currently porting a Rails 2 app to Rails 4. It is a patients management app with also image management.</p>
+
+<p>Some doctors have up to 4000 patients.</p>
+
+<p>My aim is to publish an alpha version of the revamped app on my local home server to let the users actually try the changes and be able to change the final output. At the same time the alpha deployment stack will be the same as the production deployment stack that is to say:</p>
+
+<ul>
+<li>Rubinius 2.x</li>
+<li>rvm</li>
+<li>Nginx</li>
+<li>Puma</li>
+<li>Capistrano</li>
+</ul>
+
+<p>Actually my home server hosts my wordpress website served by apache2 on a debian distribution.</p>
+
+<p>So here goes my project&#8217;s shopping list:</p>
+
+<ul>
+<li>Install Rubinius 2.1.1</li>
+<li>Install nginx and make it serve the rails puma app while still serving the apache2 installed sites</li>
+<li>Install puma and let it start as a daemon</li>
+<li>Configure Capistrano to deploy the alpha Rails 4 app to the selected stack</li>
+</ul>
+
+<p>First thing first just get rvm and install it:</p>
+
+<p>As stated on <a href="http://rubini.us/2013/09/22/ready-set/" target="_blank">rubinius blog</a> to build rubinius 2 you either need rubinius master or ruby MRI 2. But luckily rvm automatically installs the MRI 2 for you so &#8220;all you need is <a href="http://rvm.io" target="_blank">love!&#8221; for rvm which needs some money for its version 2</a>!</p>
+
+<p>This will install MRI 2 and rubinius 2.1.1 (at writing time).</p>
+
+<p>So now that we have rubinius installed let&#8217;s proceed with our world domination program and see how we can install nginx and configure it as a reverse proxy to serve this wordpress site running on apache 2 (if you can read this it&#8217;s working …. phew)!</p>
+
+<p>Just one thing to note, you need to set the <code>client_max_body_size</code> to use the automatic wordpress updates and installation of themes and plugins from zip files located on your device. Next we need to configure Apache 2 to listen on a different port than 80, I&#8217;m using 8080. Change <code>/etc/apache2/ports.conf</code>, <code>/etc/apache2/apache2.conf</code> and every virtual host directive to listen and answer to port 8080:</p>
+
+<p>Restarting Apache and reloading nginx will bring online the new web server asset serving rails apps through nginx and php apps through apache2.</p>
+
+<p>Next we need to install puma and configure nginx to serve puma applications. As I&#8217;m deploying a rails 4 app installing puma means adding a gem to my <code>Gemfile</code></p>
+
+<p>and then doing a <code>bundle install</code>.</p>
+
+<p>Next we configure nginx to serve a puma app listening on a unix socket. We add a site to <code>/etc/nginx/sites-available/</code> and paste this configuration inside it:</p>
+
+<p>The paths in the configuration are based on my Capistrano <code>deploy.rb</code> which we&#8217;ll see in a minute. It&#8217;s a git based capistrano recipe using a <code>web</code> prefix folder.</p>
+
+<p>Next we need to configure puma and capistrano in our app modifying <code>config/puma.rb</code> and <code>config/deploy.rb</code>.</p>
+
+<p>See the <a href="https://github.com/puma/puma/blob/master/examples/config.rb" target="_blank">puma.rb example file</a> to get you started, here is my puma configuration:</p>
+
+<p>The puma init.d script which will take care of starting and stopping puma daemons for every rails app is:</p>
+
+<p>And now the core of every Rails deployment &#8230; the <code>deploy.rb</code> file in all its glory.</p>
+
+<p><strong>DO YOU REALLY WANT A 500 LINES DEPLOY SCRIPT BACKED BY A FULL GEM?</strong></p>
+
+<p>I&#8217;m tired of handling resources, shared, current and all the rvm, bundler tricks without knowing exactly what I&#8217;m doing so please see my <a href="http://thinkingco.de/2013/uncategorized/easy-peasy-deploy">next post for an easy peasy deploy solution in Rails</a>.</p>
+
+<hr style="margin: 2em auto 0.25em;">
+                      <div style="font-size: medium; font-style: italic; text-align: right;">Tommaso Patrizi</div>
+                    </div>
+                    </section>
+                </div>
+                <div class="col-md-1">
+                    
+                    
+                    
+                </div>
+              </div>
+              
+          </section>
+      </section>
+     
+  </section>
+  
+    
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script src="/js/jquery.scrollTo.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/scripts.js"></script>
+    <script async defer id="github-bjs" src="/js/buttons.js"></script>
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-7131036-4', 'thinkingco.de');
+ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
+
