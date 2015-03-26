@@ -15,7 +15,7 @@
       <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
       
       <guid>http://thinkingco.de/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</guid>
-      <description>&lt;p&gt;Following my &lt;a href=&#34;http://thinkingco.de/2012/tech/rails-3-is_documentable-with-activeadmin&#34;&gt;2012 post!!!&lt;/a&gt; I finally managed to write down a small gem that allows anyone to add multiple files to any model in his rails app.&lt;/p&gt;
+      <description>&lt;p&gt;Following my &lt;a href=&#34;http://thinkingco.de/techblog/rails-3-is_documentable-with-activeadmin/&#34;&gt;2012 post!!!&lt;/a&gt; I finally managed to write down a small gem that allows anyone to add multiple files to any model in his rails app.&lt;/p&gt;
 
 &lt;p&gt;The gem has the highly innovative name of: &lt;strong&gt;AttachIt&lt;/strong&gt;.&lt;/p&gt;
 
@@ -1067,14 +1067,14 @@ end
     </item>
     
     <item>
-      <title>Who&amp;#039;s calling? (I mean ruby method)</title>
+      <title>Who&#39;s calling? (I mean ruby method)</title>
       <link>http://thinkingco.de/techblog/whos-calling-i-mean-ruby-method/</link>
       <pubDate>Wed, 03 Oct 2012 02:33:24 &#43;0000</pubDate>
       
       <guid>http://thinkingco.de/techblog/whos-calling-i-mean-ruby-method/</guid>
       <description>&lt;p&gt;I needed to know which method was calling another method in a ruby app.&lt;/p&gt;
 
-&lt;p&gt;I&amp;#8217;m writing a legacy protocol parser and need to control that received packets from the serial port stream are matching with commands replies.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m writing a legacy protocol parser and need to control that received packets from the serial port stream are matching with commands replies.&lt;/p&gt;
 
 &lt;p&gt;So I have a set of methods performing some commands and constants which represent correct replies:&lt;/p&gt;
 
