@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://thinkingco.de/</loc>
+    <lastmod>2014-01-04T02:33:24+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/techblog/2014-thinning-list/</loc>
+    <lastmod>2014-01-04T02:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/techblog/polymorphic-attachment-management-for-rails-4-and-activeadmin/</loc>
+    <lastmod>2014-01-04T02:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/techblog/migrate-joomla-windows-2003-docker/</loc>
+    <lastmod>2014-01-04T02:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/techblog/deployment-unapplicazione-rails-docker-part-2/</loc>
+    <lastmod>2014-01-04T02:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/techblog/deployment-di-unapplicazione-rails-con-docker-part-1/</loc>
+    <lastmod>2013-12-11T02:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/techblog/easy-peasy-deploy/</loc>
+    <lastmod>2013-11-14T02:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/techblog/multithreaded-rails-app-4-real/</loc>
+    <lastmod>2013-10-29T02:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/blog/luomo-e-maggiormente-confortato-dai-paradossi-g-k-chesterton/</loc>
+    <lastmod>2013-08-14T02:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/techblog/tailing-problems-in-windows/</loc>
+    <lastmod>2013-02-17T02:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/blog/elezioni-2013/</loc>
+    <lastmod>2013-02-05T02:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/blog/the-extreme-need-of-money-refactoring/</loc>
+    <lastmod>2012-10-03T02:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/techblog/whos-calling-i-mean-ruby-method/</loc>
+    <lastmod>2012-10-03T02:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/techblog/start-vsphere-machine-from-osx/</loc>
+    <lastmod>2012-09-11T02:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/techblog/eventmachine-serialport/</loc>
+    <lastmod>2012-09-06T02:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/techblog/rails-3-is_documentable-with-activeadmin/</loc>
+    <lastmod>2012-07-11T02:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/techblog/realtime-dashboard-ruby-eventmachine-and-d3-js/</loc>
+    <lastmod>2012-06-30T02:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/techblog/my-website-stack-wnws/</loc>
+    <lastmod>2012-06-08T02:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/techblog/thinking-code/</loc>
+    <lastmod>2012-06-06T02:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/me/my-life/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/me/my-job/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+</urlset>
