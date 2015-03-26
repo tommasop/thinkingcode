@@ -1,7 +1,7 @@
 ---
 title: New Hugo site and deployment workflow
 author: mithrandir
-date: 2014-01-04 02:33:24+00:00
+date: 2015-03-27 00:22:00+00:00
 slug: new-hugo-site-and-deployment-workflow
 permalink: /2015/new-hugo-site-and-deployment-workflow
 tags:
