@@ -19,6 +19,6 @@ I also use [activeadmin][2] quite broadly and find it highly flexible. And it is
 
 Enjoy: <https://github.com/tommasop/attach_it>
 
- [1]: http://thinkingco.de/2012/tech/rails-3-is_documentable-with-activeadmin
+ [1]: http://thinkingco.de/techblog/rails-3-is_documentable-with-activeadmin/
  [2]: https://github.com/activeadmin/activeadmin
  [3]: http://www.dropzonejs.com

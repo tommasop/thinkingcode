@@ -1,5 +1,5 @@
 ---
-title: 'Who&#039;s calling? (I mean ruby method)'
+title: 'Who\'s calling? (I mean ruby method)'
 author: mithrandir
 date: 2012-10-03 02:33:24+00:00
 slug: whos-calling-i-mean-ruby-method
@@ -7,7 +7,7 @@ permalink: /2012/whos-calling-i-mean-ruby-method
 ---
 I needed to know which method was calling another method in a ruby app.
 
-I&#8217;m writing a legacy protocol parser and need to control that received packets from the serial port stream are matching with commands replies.
+I'm writing a legacy protocol parser and need to control that received packets from the serial port stream are matching with commands replies.
 
 So I have a set of methods performing some commands and constants which represent correct replies:
 
