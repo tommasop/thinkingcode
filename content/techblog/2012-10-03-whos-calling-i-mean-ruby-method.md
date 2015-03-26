@@ -1,5 +1,5 @@
 ---
-title: 'Who\'s calling? (I mean ruby method)'
+title: "Who's calling? (I mean ruby method)"
 author: mithrandir
 date: 2012-10-03 02:33:24+00:00
 slug: whos-calling-i-mean-ruby-method
