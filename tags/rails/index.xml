@@ -7,7 +7,297 @@
     
     
     
-    <updated>Wed, 11 Dec 2013 02:33:24 &#43;0000</updated>
+    <updated>Sat, 04 Jan 2014 02:33:24 &#43;0000</updated>
+    
+    <item>
+      <title>Deploy Rails with Docker, Part 2</title>
+      <link>http://thinkingco.de/techblog/deploy-rails-with-docker-part-2/</link>
+      <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
+      
+      <guid>http://thinkingco.de/techblog/deploy-rails-with-docker-part-2/</guid>
+      <description>
+
+&lt;p&gt;Series takeaways:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Configure a Rails app to be deployed on a cloud architecture (Part 1)&lt;/li&gt;
+&lt;li&gt;Create a vagrant test machine with docker installed (Part 1)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Interactive image building vs. Dockerfiles (Part 2)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data Persistence (Part 2)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Good Practices (Part 2)&lt;/strong&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Create 7 docker containers that will host the reconfigured rails app (Part 3):&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Container 1: Redis Server (for session storing)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;ul&gt;
+&lt;li&gt;Container 2: Fluentd (log collection)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;ul&gt;
+&lt;li&gt;Container 3: ElasticSearch (log storage)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;ul&gt;
+&lt;li&gt;Container 4: Kibana (log analysis)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;ul&gt;
+&lt;li&gt;Container 5: PostgreSQL + PostGIS&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;ul&gt;
+&lt;li&gt;Container 6: Chruby Ruby Rails Puma&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;ul&gt;
+&lt;li&gt;Container 7: Nginx&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Link the 7 containers through &lt;a href=&#34;http://blog.docker.io/tag/links/&#34;&gt;Docker Links&lt;/a&gt; (Part 3) ‚Äî&amp;gt; intra host communication&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Real Docker Playground with two hosts (Part 4)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Deploy PostgreSQL on this second host (Part 4)&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Make the app work with the second host postgres container (Part 4) ‚Äî&amp;gt; inter host communication&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;SCALE (Part 5)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Automatic Service Discovery with &lt;a href=&#34;https://github.com/skynetservices/skydns&#34;&gt;Skydns&lt;/a&gt; and &lt;a href=&#34;https://github.com/crosbymichael/skydock&#34;&gt;Skydock&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;*   Session data and Logs HA&lt;/li&gt;
+
+&lt;li&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Database HA&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Interactive image building vs Dockerfiles&lt;/h2&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;It is possible to create docker images either interactively or through a Dockerfile.&lt;/p&gt;
+
+&lt;p&gt;To clarify this I‚Äôll show how to create a Redis Server in both ways.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;Container 1: Redis Server&lt;/h3&gt;
+
+&lt;p&gt;We need to login into the vagrant machine to begin working with our containers
+  `&lt;/p&gt;
+
+&lt;p&gt;&lt;pre&gt;&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;vagrant ssh&lt;/pre&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_2&#34;&gt;Manual build process&lt;/h4&gt;
+
+&lt;p&gt;Using the vagrant docker image docker will already be running in daemon mode.&lt;/p&gt;
+
+&lt;p&gt;To run a container from the base ubuntu image:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre&gt;&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;sudo docker run -i -t ubuntu /bin/bash&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;This will run a container in interactive (-i) mode with a pseudo tty (-t) and give us a /bin/bash terminal to use inside the container.
+  The container will be spawned from an image, the base ubuntu image which will be automatically downloaded if not found locally.&lt;/p&gt;
+
+&lt;p&gt;The command will give us access to the newly spawned container as root.&lt;/p&gt;
+
+&lt;p&gt;We will then be able to issue all the needed commands to setup the desired service in the following example the redis server:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre&gt;&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;&amp;lt;br /&amp;gt;&amp;lt;%%KEEPWHITESPACE%%&amp;gt; echo &amp;quot;deb &lt;a href=&#34;http://archive.ubuntu.com/ubuntu&#34;&gt;http://archive.ubuntu.com/ubuntu&lt;/a&gt; precise main universe&amp;quot; &amp;amp;gt; /etc/apt/sources.list&amp;lt;br /&amp;gt;&amp;lt;%%KEEPWHITESPACE%%&amp;gt; apt-get update&amp;lt;br /&amp;gt;&amp;lt;%%KEEPWHITESPACE%%&amp;gt; apt-get install -y redis-server&amp;lt;br /&amp;gt;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;The base redis machine is ready let‚Äôs commit it and save it as an image to be able to spawn it multiple times as needed.&lt;/p&gt;
+
+&lt;p&gt;Send ctrl-p + ctrl-q to exit the container shell (if you forgot something just &lt;code&gt;sudo docker attach &amp;lt;container_id&amp;gt;&lt;/code&gt;) and then run:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre&gt;&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;sudo docker commit &amp;amp;lt;container_id&amp;amp;gt; &amp;amp;lt;some_name&amp;amp;gt;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;If you simply &lt;code&gt;exit&lt;/code&gt; the container shell the container will shut down.&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_3&#34;&gt;Dockerfile&lt;/h4&gt;
+
+&lt;p&gt;The docker build process of a Dockerfile has the following logical steps:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;spawn a container from an image (because images are immutable)
+
+&lt;ol&gt;
+&lt;li&gt;run shell scripts inside the container&lt;/li&gt;
+&lt;li&gt;save the result: commit the container as an intermediate image&lt;/li&gt;
+&lt;li&gt;proceed to next build step&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;A &lt;code&gt;Dockerfile&lt;/code&gt; is a shell inspired script supporting &lt;a href=&#34;http://docs.docker.io/en/latest/use/builder/&#34;&gt;few instructions&lt;/a&gt; that describes the &lt;code&gt;docker build&lt;/code&gt; process.&lt;/p&gt;
+
+&lt;p&gt;Here is the same redis server machine expressed with a Dockerfile:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre&gt;&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;&amp;lt;br /&amp;gt;FROM ubuntu:precise&amp;lt;br /&amp;gt;RUN apt-get update&amp;lt;br /&amp;gt;RUN apt-get -y install redis-server&amp;lt;br /&amp;gt;EXPOSE 6379&amp;lt;br /&amp;gt;ENTRYPOINT [&amp;quot;/usr/bin/redis-server&amp;quot;]&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;You can also leverage the wonderful docker community and pull a ready-to-go image from the Docker index:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre&gt;&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;docker pull dockerfile/redis&lt;/pre&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_4&#34;&gt;Data Persistence&lt;/h2&gt;
+
+&lt;p&gt;As &lt;strong&gt;containers are ephemeral&lt;/strong&gt; two problems arises:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Data Persistence&lt;/strong&gt; across containers restart&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Network configuration persistence or predictability&lt;/strong&gt; across containers restart&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I‚Äôll deal here about the first issue and in &lt;em&gt;Part 4&lt;/em&gt; about the latter.&lt;/p&gt;
+
+&lt;p&gt;Data persistence can be implemented in Docker essentially in three ways:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Sharing a volume between a container and the host&lt;/li&gt;
+&lt;li&gt;Decoupling data within each container creating a volume&lt;/li&gt;
+&lt;li&gt;Sharing one or more containers as the data volume hoders between one or more containers&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The first and second implementations are as easy as:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre&gt;&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;sudo docker run -v /var/logs:/var/host_logs:ro ubuntu bash&lt;/pre&gt;
+  &lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;sudo docker run -v /var/new_volume ubuntu bash&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;with the &lt;code&gt;-v&lt;/code&gt; option taking the following parameters:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre&gt;&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;-v=[]: Create a bind mount with: [host-dir]:[container-dir]:[rw|ro].&amp;lt;br /&amp;gt;If &amp;quot;host-dir&amp;quot; is missing, then docker creates a new volume.&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;The Docker documentation explains very well why sharing volumes with the host is not good:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;This is not available from a Dockerfile as it makes the built image less portable or shareable. [host-dir] volumes are 100% host dependent and will break on any other machine.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To obtain &lt;strong&gt;data decouplication&lt;/strong&gt; you can also add a &lt;code&gt;VOLUME&lt;/code&gt;directive to an image Dockerfile and this will automatically create a new volume.
+  Data in the volume is not destroyed with the container but will persist in a &lt;code&gt;/var/lib/docker/dir/vfs/container_id&lt;/code&gt; folder that you can grabo with a &lt;code&gt;docker inspect&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The third implementation is almost easy as the first two but has the portability/shareability advantage we need. It is a &lt;strong&gt;data decouplication&lt;/strong&gt; run through an intermediate container. A sort of &lt;em&gt;container-in-the-middle&lt;/em&gt; that while persisting data can also be easily ported to another host.&lt;/p&gt;
+
+&lt;p&gt;You can create a data container like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre&gt;&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;docker run -v /data/www -v /data/db busybox true&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;p&gt;&lt;pre&gt;&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;&amp;lt;/pre&amp;gt;&amp;lt;h1&amp;gt;BUILD-USING: docker build -t data .&amp;lt;/h1&amp;gt;&amp;lt;h1&amp;gt;RUN-USING: docker run -name DATA data&amp;lt;/h1&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;br /&amp;gt;FROM busybox&amp;lt;br /&amp;gt;VOLUME [‚Äú/data/www‚Äù, ‚Äú/data/db‚Äù]&amp;lt;br /&amp;gt;CMD [&amp;quot;true&amp;quot;]&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;As any container needs a command to run, &lt;code&gt;true&lt;/code&gt; is the smallest, simplest program that you can run. Running the true command will immediately exit the container but &lt;strong&gt;once created you can mount its volumes in any other container using the &lt;code&gt;-volumes-from&lt;/code&gt; option; irrespecive of whether the container is running or not.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;busybox&lt;/strong&gt; is a wonderful linux image ASACB (as small as can be) ~ 2.5 MB!!!&lt;/p&gt;
+
+&lt;p&gt;What can you do with this &lt;strong&gt;DATA CONTAINER&lt;/strong&gt; pattern?&lt;/p&gt;
+
+&lt;p&gt;You can create exactly what the name implies: data containers.&lt;/p&gt;
+
+&lt;p&gt;You can create as much containers as you like, one data container for each process or one for the process and one for ist logs or one for all processes data and one for all processes logs.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This creates a data container with &lt;code&gt;/data&lt;/code&gt; volume exposed&lt;/p&gt;
+
+&lt;p&gt;&lt;pre&gt;&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;docker run -v /data &amp;ndash;name PGDATA tcode/datastore&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;This binds the actual process (PostgreSQL) to the data container (you need to configure the postgresql.conf accordingly):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;pre&amp;gt;&amp;lt;pre class=&amp;quot;brush: bash; title: ; notranslate&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;docker run -d --volumes-from PGDATA --name pg93 tcode/pg93&amp;lt;/pre&amp;gt;
+
+Now whatever happens to your pg93 container your data will be safe in your PGDATA container.
+If you restart your server when the pg93 container will restart it will find all its data into PGDATA again.
+
+More interestingly if you need to migrate your data to a new host you can do:
+
+&amp;lt;pre&amp;gt;&amp;lt;pre class=&amp;quot;brush: bash; title: ; notranslate&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;docker run -rm --volumes-from PGDATA -v $(pwd):/backup busybox tar cvf /backup/backup.tar /data&amp;lt;/pre&amp;gt;
+
+                                                                                                             This will start a container which will mount the current dir in /backup and load volumes from PGDATA, then it will tar all the data in /data in a comfortable backup.tar file you will find on your current path at container exit!
+
+                                                                                                             Now you can go to another host and recreate your PGDATA data container in the new host:
+
+                                                                                                             &amp;lt;pre&amp;gt;&amp;lt;pre class=&amp;quot;brush: bash; title: ; notranslate&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;docker run -v /data --name PGDATA tcode/datastore&amp;lt;/pre&amp;gt;
+
+                                                                                                             inject the data back in the data container:
+
+                                                                                                             &amp;lt;pre&amp;gt;&amp;lt;pre class=&amp;quot;brush: bash; title: ; notranslate&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;docker run -rm --volumes-from PGDATA -v $(pwd):/backup busybox tar xvf /backup/backup.tar / &amp;lt;/pre&amp;gt;
+
+                                                                                                                                                                                                                          Start your shiny new postgresql server with all your data:
+
+                                                                                                                                                                                                                          &amp;lt;pre&amp;gt;&amp;lt;pre class=&amp;quot;brush: bash; title: ; notranslate&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;docker run -d --volumes-from PGDATA --name pg93 tcode/pg93&amp;lt;/pre&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;toc_5&#34;&gt;Good Practices&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;                                                                                                                                                                                                                          The different kind of data persistence are interesting because they offer hints on how to do things properly in docker.
+                                                                                                                                                                                                                          In this respect docker is not only a commodity over lxcs but is actually shaping up a new way of developing and deploying applications.
+                                                                                                                                                                                                                          Using this wonderful piece of software bring about the need of some new practices.
+                                                                                                                                                                                                                          For example:
+                                                                                                                                                                                                                          &amp;amp;#8211; How can I keep my git development process and merge it with docker?
+                                                                                                                                                                                                                          &amp;amp;#8211; How can I migrate an existing development/deployment situation to docker?
+
+                                                                                                                                                                                                                          Answers will widely vary depending on which technologies you are using.
+
+                                                                                                                                                                                                                          My actual development environment is osx/zsh/git/vim.
+                                                                                                                                                                                                                          I‚Äôm developing with Rails.
+                                                                                                                                                                                                                          So my actual development involves process is to change files commit them and then deploy them in production through Capistrano.
+
+                                                                                                                                                                                                                          How can this change with docker?
+
+                                                                                                                                                                                                                          Actually I have VirtualBox installed with Vagrant and my development workflow is the following:
+                                                                                                                                                                                                                          1. In Vagrant:
+                                                                                                                                                                                                                          &amp;amp;#8211; Start a database container
+                                                                                                                                                                                                                          &amp;amp;#8211; Start an interactive rails container like this: `docker run -i -t -v /vagrant/rails_app:/data --link databasecontainer:db -p 80:3000 my_rails_image /bin/bash`
+                                                                                                                                                                                                                          &amp;amp;#8211; Run the rails server after proper initialization: `cd /data &amp;amp;&amp;amp; bundle install &amp;amp;&amp;amp; rails s Puma`
+                                                                                                                                                                                                                          2. In my OSX:
+                                                                                                                                                                                                                          &amp;amp;#8211; `vim /rails_app`
+                                                                                                                                                                                                                          &amp;amp;#8211; hack hack hack
+                                                                                                                                                                                                                          3. In Vagrant container: CTRL+C rails s Puma
+                                                                                                                                                                                                                          4. In my OSX `git push`
+
+                                                                                                                                                                                                                          And what about deployment?
+
+                                                                                                                                                                                                                          Deplyoment for a 12 factor app which is already configured to have minimal difference between development and production environments is quite straightforward, the only thing to take care of is getting your code from your git of choice repository:
+
+                                                                                                                                                                                                                          GitHub
+
+                                                                                                                                                                                                                          &amp;lt;pre&amp;gt;&amp;lt;pre class=&amp;quot;brush: bash; title: ; notranslate&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;curl -sLk -u $REPO_TOKEN:x-oauth-basic https://github.com/$REPO_USER/$REPO_NAME/archive/master.tar.gz -o master.tar.gz&amp;lt;/pre&amp;gt;
+
+                                                                                                                                                                                                                          Bitbucket
+
+                                                                                                                                                                                                                          &amp;lt;pre&amp;gt;&amp;lt;pre class=&amp;quot;brush: bash; title: ; notranslate&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;curl --digest --user $REPO_USER:$REPO_PASSWORD https://bitbucket.org/$REPO_USER/$REPO_NAME/get/master.tar.gz -o master.tar.gz&amp;lt;/pre&amp;gt;
+
+                                                                                                                                                                                                                          More on this in Part 3 which will show the different Dockerfiles.
+
+                                                                                                                                                                                                                          DATA PERSISTENCE AND DECOUPLICATION:
+                                                                                                                                                                                                                          [http://docs.docker.io/use/working_with_volumes/](http://docs.docker.io/use/working_with_volumes/)
+                                                                                                                                                                                                                          [http://www.offermann.us/2013/12/tiny-docker-pieces-loosely-joined.html](http://www.offermann.us/2013/12/tiny-docker-pieces-loosely-joined.html)
+                                                                                                                                                                                                                          [http://www.tech-d.net/2013/12/16/persistent-volumes-with-docker-container-as-volume-pattern/](http://www.tech-d.net/2013/12/16/persistent-volumes-with-docker-container-as-volume-pattern/)
+                                                                                                                                                                                                                          [http://stinemat.es/dockerizing-ghost-part‚Äì2-data-migration/](http://stinemat.es/dockerizing-ghost-part‚Äì2-data-migration/)
+                                                                                                                                                                                                                          [http://www.techbar.me/wordpress-docker/](http://www.techbar.me/wordpress-docker/)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Polymorphic attachments for Rails 4 and ActiveAdmin</title>
+      <link>http://thinkingco.de/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</link>
+      <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
+      
+      <guid>http://thinkingco.de/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</guid>
+      <description>&lt;p&gt;Following my &lt;a href=&#34;http://thinkingco.de/techblog/rails-3-is_documentable-with-activeadmin/&#34;&gt;2012 post!!!&lt;/a&gt; I finally managed to write down a small Rails 4 engine that allows anyone to add multiple files to any model in his rails app.&lt;/p&gt;
+
+&lt;p&gt;The gem has the highly innovative name of: &lt;strong&gt;AttachIt&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;As the original post also took into account ActiveAdmin I managed to add the same functionalities to ActiveAdmin also.&lt;/p&gt;
+
+&lt;p&gt;The gem is thought for use in the show action for your model.&lt;/p&gt;
+
+&lt;p&gt;I have a lot of websites with this requirement of handling multiple files for multiple models so I think this must be a fairly common pattern.&lt;/p&gt;
+
+&lt;p&gt;I also use &lt;a href=&#34;https://github.com/activeadmin/activeadmin&#34;&gt;activeadmin&lt;/a&gt; quite broadly and find it highly flexible. And it is indeed! Here I use &lt;a href=&#34;http://www.dropzonejs.com&#34;&gt;dropzonejs.com&lt;/a&gt; inside activeadmin and also import bootstrap modal and grid to handle the responsive image gallery.&lt;/p&gt;
+
+&lt;p&gt;Enjoy: &lt;a href=&#34;https://github.com/tommasop/attach_it&#34;&gt;https://github.com/tommasop/attach_it&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Deployment Rails with Docker Part 1</title>
