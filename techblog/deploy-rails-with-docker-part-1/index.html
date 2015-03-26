@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ex chaos simplicitas">
+    <meta name="author" content="Tommaso Patrizi">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <title>Deployment Rails with Docker Part 1</title>
+
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style-responsive.css" rel="stylesheet" />
+    <link href="/css/monokai_sublime.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+  
+  <section id="container" class="">
+
+      
+      <header class="header black-bg">
+            <div class="toggle-nav">
+                <i class="fa fa-bars"></i>
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
+            </div>
+
+            
+            <a href="/" class="logo"><img src="/img/tcode-tr-sm.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;"></span></a>
+            
+            <div class="top-nav notification-row">
+                
+                <div class="hidden-xs pull-right">
+                    <a href="https://github.com/tommasop" class="fa fa-github">octocat</a>         
+                    <a href="https://twitter.com/tommasomatic" class="fa fa-twitter">twitter</a>
+                </div>
+            </div>
+
+            <div class="nav title-row" id="top_menu">
+                <h1 class="nav top-menu">Deployment Rails with Docker Part 1</h1>
+            </div>
+      </header>
+      
+
+
+<aside>
+    <div id="sidebar" class="nav-collapse">
+        
+        <ul class="sidebar-menu">
+          
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-male'></i>
+                
+                <span>Me</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="http://thinkingco.de/me/my-life/">My Life</a> </li>
+                    
+                    <li><a href="http://thinkingco.de/me/my-job/">My Job</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="/techblog/">
+                    <i class='fa fa-code'></i>
+                    
+                    <span>Technology</span>
+                </a>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="/notes/">
+                    <i class='fa fa-file-text-o'></i>
+                    
+                    <span>Notes</span>
+                </a>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="/portfolio/">
+                    <i class='fa fa-briefcase'></i>
+                    
+                    <span>Portfolio</span>
+                </a>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="/blog/">
+                    <i class='fa fa-heart'></i>
+                    
+                    <span>Other Topics</span>
+                </a>
+              
+              </li>
+          
+
+        </ul>
+        
+    </div>
+</aside>
+
+
+
+      
+      <section id="main-content">
+          <section class="wrapper">
+
+              
+                  
+                      
+                      
+                          
+                          
+                          
+                      
+                      
+                  
+              
+
+              <div class="row">
+                  <div class="col-md-1">
+                      
+                      
+                      
+                  </div>
+                <div class="col-md-10">
+                    <section class="panel">
+                          
+                              
+                          
+                    <div class="panel-body">
+<script>
+(function() {
+  var cx = '004940163756227230940:9tdbvl9bwk4';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+    '//www.google.com/cse/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script>
+<gcse:search linktarget="_parent"></gcse:search>
+
+
+
+
+<p>After my <a href="http://thinkingco.de/easy-peasy-deploy">first approach</a> to easying up the many pains of Rails deployment I happened to bump into <a href="http://www.docker.io">Docker</a> for a broader PAAS project.</p>
+
+<p>So my thought was: why automate only code deployment if I can automate the whole machine deployment especially with a tool like Docker that makes this task trivial and quick.</p>
+
+<p>In this way it will be extremely easy to replicate a development/production environment and instead of updating code I could simply redeploy a machine.<br />
+Not only this but it will be easier to experiment with a broader PAAS deployment.</p>
+
+<p>So these will be the takeaways from this series of posts:</p>
+
+<ol>
+<li><strong>Configure a Rails app to be deployed on a cloud architecture (Part 1)</strong></li>
+<li><strong>Create a vagrant test machine with docker installed (Part 1)</strong></li>
+<li>Interactive image building vs. Dockerfiles (Part 2)</li>
+<li>Data Persistence (Part 2)</li>
+<li>Development vs. Production (Part 2)</li>
+<li>Create 7 docker containers that will host the reconfigured rails app (Part 3):
+
+<ul>
+<li>Container 1: Redis Server (for session storing)</li>
+<li>Container 2: Fluentd (log collection)</li>
+<li>Container 3: ElasticSearch (log storage)</li>
+<li>Container 4: Kibana (log analysis)</li>
+<li>Container 5: PostgreSQL + PostGIS</li>
+<li>Container 6: Ruby 2.1.1 Rails Puma</li>
+<li>Container 7: Nginx</li>
+</ul></li>
+<li>Link the 7 containers through <a href="http://blog.docker.io/tag/links/">Docker Links</a> (Part 3) —&gt; intra host communication</li>
+<li>Create another vagrant test machine with docker (Part 4)</li>
+<li>Deploy PostgreSQL on this second host (Part 4)</li>
+<li>Make the app work with the second host postgres container (Part 4) —&gt; inter host communication</li>
+<li>SCALE (Part 5)
+
+<ul>
+<li>Automatic Service Discovery with <a href="https://github.com/skynetservices/skydns">Skydns</a> and <a href="https://github.com/crosbymichael/skydock">Skydock</a></li>
+<li>Session data and Logs HA</li>
+<li>Database HA</li>
+</ul></li>
+</ol>
+
+<p>The overview seems quite interesting so let’s start.</p>
+
+<h2 id="toc_0">Configure a Rails app to be deployed on a cloud architecture</h2>
+
+<p>To configure the Rails app (or every other app) to be cloud deployable you need to follow the <a href="12factor.net">The twelve-factor app methodology</a>.<br />
+You can use this methodology to build software-as-a-service apps that:<br />
+&#8211; Use declarative formats for setup automation, to minimize time and cost for new developers joining the project;<br />
+&#8211; Have a clean contract with the underlying operating system, offering maximum portability between execution environments;<br />
+&#8211; Are suitable for deployment on modern cloud platforms, obviating the need for servers and systems administration;<br />
+&#8211; Minimize divergence between development and production, enabling continuous deployment for maximum agility;<br />
+&#8211; And can scale up without significant changes to tooling, architecture, or development practices.</p>
+
+<p>Going through the twelve factors I found that most of the steps are already achieved through git versioning + rails YAY!!!</p>
+
+<p>Nonetheless there are some points to tackle.</p>
+
+<h3 id="toc_1">Config</h3>
+
+<p>Rails stores configuration in config files which are not checked into revision control. This violates the principle of <strong>strict separation of config from code</strong>.<br />
+Configuration must not be grouped (development, test, production) and must be independently managed for each deploy.<br />
+It must be stored in <strong><em>environment variables</em></strong>.</p>
+
+<p>So what we need is a place to store env variables which won’t be committed into our git repository and a way to load it into Rails.</p>
+
+<p>The <a href="https://github.com/bkeepers/dotenv">dotenv gem</a> is a wellcomed help in this task expecially in its master branch which now initializes before database (<a href="https://github.com/laserlemon/figaro/issues/70">see here</a>)</p>
+
+<p>The dotenv gem let you use a <code>.env</code>file to store ENV variables (you can also use a different <code>.env.environment</code> file for each environment though this will break the twelve factor app principles)</p>
+
+<p>Something like:</p>
+
+<pre><code>S3_BUCKET=YOURS3BUCKET
+SECRET_KEY=YOURSECRETKEYGOESHERE
+</code></pre>
+
+<p>That you can use in your code this way:</p>
+
+<pre><code>config.fog_directory  = ENV['S3_BUCKET']
+</code></pre>
+
+<p>Every time the rails app loads it will have all the variables declared in <code>.env</code> available in <code>ENV</code>!</p>
+
+<h3 id="toc_2">Processes</h3>
+
+<p><strong>Twelve-factor processes are stateless and share-nothing</strong></p>
+
+<p>Amongst other things this means we need to store our session data either in the DB or in another kind of datastore.<br />
+Using the db will introduce significant lag in page rendering so I want to use a faster key/value datastore.</p>
+
+<p><a href="http://memcached.org/">Memcached</a> is a very interesting and clusterable datastore but I will use <strong><a href="http://redis.io/">Redis</a></strong> for two fundamental reasons:<br />
+1. first and foremost because its creator is italian!<br />
+2. faster than memcached<br />
+3. more powerful commands<br />
+4. no cache warmup needed<br />
+5. useful for solving other problems (eg. queues with Resque)</p>
+
+<p><a href="https://github.com/roidrage/redis-session-store">redis-session-store</a> to the rescue!</p>
+
+<p>Once installed and run a Redis server switching Rails session management to Redis is as simple as<br />
+adding a dependency on the redis-session-store gem to your Gemfile then run bundle.</p>
+
+<p>Open the session initializer <code>config/initializers/session_store.rb</code> and add the following lines:</p>
+
+<pre><code>AppName::Application.config.session_store :redis_session_store, {
+  key: 'redis_session',
+  redis: {
+    db: 2,
+    expire_after: 120.minutes,
+    key_prefix: 'appname:session:',
+    host: ENV[&quot;REDIS_PORT_6379_TCP_ADDR&quot;], # Redis host name, default is localhost
+    port: ENV[&quot;REDIS_PORT_6379_TCP_PORT&quot;]   # Redis port, default is 6379
+  }
+}
+</code></pre>
+
+<p>Restart the server and you&#8217;re ready to go!</p>
+
+<h3 id="toc_3">Keep development, staging, and production as similar as possible</h3>
+
+<p>Using Docker on Vagrant on my development machine means that my development and production environments will be identical!</p>
+
+<h3 id="toc_4">Treat logs as event streams</h3>
+
+<p>While rails is already configured to log <code>stdout</code> to terminal when in development mode it is not thought to route events to a standard destination for long term archiving.</p>
+
+<p><a href="http://fluentd.org/">Fluentd</a> is an open source log router (written in ruby) which can used to route log streams to a permanent storing location (MongoDB or a PostgreSQL hstore to avoid inserting another piece of software in the overall architecture, or ElasticSearch to analyze log data) and which includes a robust buffering solution.</p>
+
+<p>Using fluentd in a Rails 4 can be achieved through the following steps:<br />
+1. <a href="http://docs.fluentd.org/articles/before-install">Prepare the OS</a><br />
+2. <a href="http://docs.fluentd.org/articles/install-by-deb">Install fluentd (Debian flavor)</a><br />
+3. Add fluent logger gem to rails app<br />
+gem &#8216;act-fluent-logger-rails&#8217;<br />
+bundle<br />
+4. Configure rails to log through fluentd<br />
+&#8211; in config/environments/production.rb<br />
+config.log_level = :info<br />
+config.logger = ActFluentLoggerRails::Logger.<br />
+new()<br />
+&#8211; create a config/fluent-logger.yml file</p>
+
+<pre><code>production:
+  fluent_host:   ‘192.168.x.x’
+  fluent_port:   24224
+  tag:           'foo'
+  messages_type: 'string'
+</code></pre>
+
+<h2 id="toc_5">Create a vagrant test machine with docker installed</h2>
+
+<p>The <a href="http://docs.docker.io/en/latest/installation/vagrant/">Docker guide</a> works flawlessy and deploys a vagrant image through a Dockerfile deploying docker through docker &#8230; awesome!</p>
+
+<p>The Docker version actually deployed is 0.6.1 I need to upgrade to use the <strong>links</strong> functionality available from 0.6.5.</p>
+
+<pre><code>sudo apt-get install curl
+# Add the Docker repository key to your local keychain
+sudo sh -c &quot;curl https://get.docker.io/gpg | apt-key add -&quot;
+# Add the Docker repository to your apt sources list.
+sudo sh -c &quot;echo deb https://get.docker.io/ubuntu docker main &gt; /etc/apt/sources.list.d/docker.list&quot;
+# update your sources list
+sudo apt-get update
+# install the latest
+sudo apt-get install lxc-docker
+</code></pre>
+
+<p>DONE!</p>
+
+<p>That was easy!</p>
+
+<p><strong>This ends Part 1.</strong></p>
+
+<hr style="margin: 2em auto 0.25em;">
+                      <div style="font-size: medium; font-style: italic; text-align: right;">Tommaso Patrizi</div>
+                    </div>
+                    </section>
+                </div>
+                <div class="col-md-1">
+                    
+                    
+                    
+                </div>
+              </div>
+              
+          </section>
+      </section>
+     
+  </section>
+  
+    
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script src="/js/jquery.scrollTo.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/scripts.js"></script>
+    <script async defer id="github-bjs" src="/js/buttons.js"></script>
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-7131036-4', 'thinkingco.de');
+ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
+
