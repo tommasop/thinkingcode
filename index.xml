@@ -39,11 +39,11 @@
     </item>
     
     <item>
-      <title>Polymorphic attachment management for Rails 4 and ActiveAdmin</title>
-      <link>http://thinkingco.de/techblog/polymorphic-attachment-management-for-rails-4-and-activeadmin/</link>
+      <title>Polymorphic attachments for Rails 4 and ActiveAdmin</title>
+      <link>http://thinkingco.de/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</link>
       <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/techblog/polymorphic-attachment-management-for-rails-4-and-activeadmin/</guid>
+      <guid>http://thinkingco.de/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</guid>
       <description>&lt;p&gt;Following my &lt;a href=&#34;http://thinkingco.de/2012/tech/rails-3-is_documentable-with-activeadmin&#34;&gt;2012 post!!!&lt;/a&gt; I finally managed to write down a small gem that allows anyone to add multiple files to any model in his rails app.&lt;/p&gt;
 
 &lt;p&gt;The gem has the highly innovative name of: &lt;strong&gt;AttachIt&lt;/strong&gt;.&lt;/p&gt;
@@ -330,11 +330,11 @@ docker run -d -name my-web-machine -p 80:80 -p 9000:22 -link my-site-db:mysql -v
     </item>
     
     <item>
-      <title>Deployment di un‚Äôapplicazione Rails con Docker ‚Äì Part 2</title>
-      <link>http://thinkingco.de/techblog/deployment-unapplicazione-rails-docker-part-2/</link>
+      <title>Deploy Rails with Docker, Part 2</title>
+      <link>http://thinkingco.de/techblog/deploy-rails-with-docker-part-2/</link>
       <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/techblog/deployment-unapplicazione-rails-docker-part-2/</guid>
+      <guid>http://thinkingco.de/techblog/deploy-rails-with-docker-part-2/</guid>
       <description>
 
 &lt;p&gt;Series takeaways:&lt;/p&gt;
@@ -598,11 +598,11 @@ More interestingly if you need to migrate your data to a new host you can do:
     </item>
     
     <item>
-      <title>Deployment di un&amp;#8217;applicazione Rails con Docker &amp;#8211; Part 1</title>
-      <link>http://thinkingco.de/techblog/deployment-di-unapplicazione-rails-con-docker-part-1/</link>
+      <title>Deployment Rails with Docker Part 1</title>
+      <link>http://thinkingco.de/techblog/deploy-rails-with-docker-part-1/</link>
       <pubDate>Wed, 11 Dec 2013 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/techblog/deployment-di-unapplicazione-rails-con-docker-part-1/</guid>
+      <guid>http://thinkingco.de/techblog/deploy-rails-with-docker-part-1/</guid>
       <description>
 
 &lt;p&gt;After my &lt;a href=&#34;http://thinkingco.de/easy-peasy-deploy&#34;&gt;first approach&lt;/a&gt; to easying up the many pains of Rails deployment I happened to bump into &lt;a href=&#34;http://www.docker.io&#34;&gt;Docker&lt;/a&gt; for a broader PAAS project.&lt;/p&gt;
