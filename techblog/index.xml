@@ -7,34 +7,12 @@
     
     
     
-    <updated>Sat, 04 Jan 2014 02:33:24 &#43;0000</updated>
-    
-    <item>
-      <title>Polymorphic attachments for Rails 4 and ActiveAdmin</title>
-      <link>http://thinkingco.de/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</link>
-      <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
-      
-      <guid>http://thinkingco.de/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</guid>
-      <description>&lt;p&gt;Following my &lt;a href=&#34;http://thinkingco.de/techblog/rails-3-is_documentable-with-activeadmin/&#34;&gt;2012 post!!!&lt;/a&gt; I finally managed to write down a small Rails 4 engine that allows anyone to add multiple files to any model in his rails app.&lt;/p&gt;
-
-&lt;p&gt;The gem has the highly innovative name of: &lt;strong&gt;AttachIt&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;As the original post also took into account ActiveAdmin I managed to add the same functionalities to ActiveAdmin also.&lt;/p&gt;
-
-&lt;p&gt;The gem is thought for use in the show action for your model.&lt;/p&gt;
-
-&lt;p&gt;I have a lot of websites with this requirement of handling multiple files for multiple models so I think this must be a fairly common pattern.&lt;/p&gt;
-
-&lt;p&gt;I also use &lt;a href=&#34;https://github.com/activeadmin/activeadmin&#34;&gt;activeadmin&lt;/a&gt; quite broadly and find it highly flexible. And it is indeed! Here I use &lt;a href=&#34;http://www.dropzonejs.com&#34;&gt;dropzonejs.com&lt;/a&gt; inside activeadmin and also import bootstrap modal and grid to handle the responsive image gallery.&lt;/p&gt;
-
-&lt;p&gt;Enjoy: &lt;a href=&#34;https://github.com/tommasop/attach_it&#34;&gt;https://github.com/tommasop/attach_it&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
+    <updated>Fri, 27 Mar 2015 00:22:00 &#43;0000</updated>
     
     <item>
       <title>New Hugo site and deployment workflow</title>
       <link>http://thinkingco.de/techblog/new-hugo-site-and-deployment-workflow/</link>
-      <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
+      <pubDate>Fri, 27 Mar 2015 00:22:00 &#43;0000</pubDate>
       
       <guid>http://thinkingco.de/techblog/new-hugo-site-and-deployment-workflow/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve longed for long to have a statically generated website.&lt;/p&gt;
@@ -89,6 +67,28 @@
 &lt;li&gt;no administrative console&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;just content&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Polymorphic attachments for Rails 4 and ActiveAdmin</title>
+      <link>http://thinkingco.de/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</link>
+      <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
+      
+      <guid>http://thinkingco.de/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</guid>
+      <description>&lt;p&gt;Following my &lt;a href=&#34;http://thinkingco.de/techblog/rails-3-is_documentable-with-activeadmin/&#34;&gt;2012 post!!!&lt;/a&gt; I finally managed to write down a small Rails 4 engine that allows anyone to add multiple files to any model in his rails app.&lt;/p&gt;
+
+&lt;p&gt;The gem has the highly innovative name of: &lt;strong&gt;AttachIt&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;As the original post also took into account ActiveAdmin I managed to add the same functionalities to ActiveAdmin also.&lt;/p&gt;
+
+&lt;p&gt;The gem is thought for use in the show action for your model.&lt;/p&gt;
+
+&lt;p&gt;I have a lot of websites with this requirement of handling multiple files for multiple models so I think this must be a fairly common pattern.&lt;/p&gt;
+
+&lt;p&gt;I also use &lt;a href=&#34;https://github.com/activeadmin/activeadmin&#34;&gt;activeadmin&lt;/a&gt; quite broadly and find it highly flexible. And it is indeed! Here I use &lt;a href=&#34;http://www.dropzonejs.com&#34;&gt;dropzonejs.com&lt;/a&gt; inside activeadmin and also import bootstrap modal and grid to handle the responsive image gallery.&lt;/p&gt;
+
+&lt;p&gt;Enjoy: &lt;a href=&#34;https://github.com/tommasop/attach_it&#34;&gt;https://github.com/tommasop/attach_it&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
