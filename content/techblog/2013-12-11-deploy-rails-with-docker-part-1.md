@@ -1,9 +1,9 @@
 ---
-title: 'Deployment di un&#8217;applicazione Rails con Docker &#8211; Part 1'
+title: 'Deployment Rails with Docker Part 1'
 author: mithrandir
 date: 2013-12-11 02:33:24+00:00
-slug: deployment-di-unapplicazione-rails-con-docker-part-1
-permalink: /2013/deployment-di-unapplicazione-rails-con-docker-part-1
+slug: deploy-rails-with-docker-part-1
+permalink: /2013/deployment-rails-with-docker-part-1
 tags:
   - docker
   - fluentd

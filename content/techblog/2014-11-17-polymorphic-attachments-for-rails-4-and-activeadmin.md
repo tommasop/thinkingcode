@@ -1,9 +1,9 @@
 ---
-title: Polymorphic attachment management for Rails 4 and ActiveAdmin
+title: Polymorphic attachments for Rails 4 and ActiveAdmin
 author: mithrandir
 date: 2014-01-04 02:33:24+00:00
-slug: polymorphic-attachment-management-for-rails-4-and-activeadmin
-permalink: /2014/polymorphic-attachment-management-for-rails-4-and-activeadmin
+slug: polymorphic-attachments-for-rails-4-and-activeadmin
+permalink: /2014/polymorphic-attachments-for-rails-4-and-activeadmin
 ---
 Following my [2012 post!!!][1] I finally managed to write down a small gem that allows anyone to add multiple files to any model in his rails app.
 
