@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Markdown on  </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://thinkingco.de/tags/markdown/index.xml/</link>
+    
+    
+    
+    <updated>Sat, 04 Jan 2014 02:33:24 &#43;0000</updated>
+    
+    <item>
+      <title>New Hugo site and deployment workflow</title>
+      <link>http://thinkingco.de/techblog/new-hugo-site-and-deployment-workflow/</link>
+      <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
+      
+      <guid>http://thinkingco.de/techblog/new-hugo-site-and-deployment-workflow/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve longed for long to have a statically generated website.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve always found wordpress not to be inline with my vision of as thin code as possible.&lt;/p&gt;
+
+&lt;p&gt;This is where &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; came into play. I find it particularly attractive because:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;it is blazing fast (you can rebuild your site in milliseconds)&lt;/li&gt;
+&lt;li&gt;it is written in &lt;a href=&#34;https://golang.org&#34;&gt;go&lt;/a&gt; language which I find extremely interesting for its simplicity&lt;/li&gt;
+&lt;li&gt;it is written by &lt;a href=&#34;http://spf13.com&#34;&gt;Steve Francia&lt;/a&gt; of Docker, MongoDB, vim-spf13 and other project&amp;rsquo;s fame&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I love docker and vim and now also &lt;strong&gt;Hugo!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Apart from copying the hugo website layout I also find it very pleasing to write content with it in &lt;a href=&#34;http://daringfireball.net/projects/markdown/&#34;&gt;markdown&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;and also find it very easy to deploy everything to &lt;a href=&#34;https://pages.github.com/&#34;&gt;github pages&lt;/a&gt; through a &lt;strong&gt;git subtree&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;To setup your Hugo website you need to have a git repository on github.&lt;/p&gt;
+
+&lt;p&gt;Remove the public directory from the .gitignore file. Hugo projects ignore it by default.&lt;/p&gt;
+
+&lt;p&gt;Add the public directory to your repository:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git add public &amp;amp;&amp;amp; git commit -m &amp;quot;Initial public subtree commit&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Deploy the subtree to a different branch. Specify a relative path to your public directory with &amp;ndash;prefix:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git subtree push --prefix public origin gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Develop normally, committing your entire repository to your default (master) branch.&lt;/p&gt;
+
+&lt;p&gt;To deploy the public directory, run the subtree push command from the root directory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git subtree push --prefix public origin gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then you only need a &lt;code&gt;CNAME&lt;/code&gt; file with your domain name inside and to CNAME your DNS to your default github.io domain:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;CNAME thinkingco.de tommasop.github.io
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Overall I&amp;rsquo;m very happy with the new asset:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;no db&lt;/li&gt;
+&lt;li&gt;no webserver&lt;/li&gt;
+&lt;li&gt;no administrative console&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;just content&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

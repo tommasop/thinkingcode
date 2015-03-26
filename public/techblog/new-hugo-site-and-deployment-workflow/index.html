@@ -7,7 +7,7 @@
     <meta name="author" content="Tommaso Patrizi">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-    <title>Polymorphic attachments for Rails 4 and ActiveAdmin</title>
+    <title>New Hugo site and deployment workflow</title>
 
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -40,7 +40,7 @@
             </div>
 
             <div class="nav title-row" id="top_menu">
-                <h1 class="nav top-menu">Polymorphic attachments for Rails 4 and ActiveAdmin</h1>
+                <h1 class="nav top-menu">New Hugo site and deployment workflow</h1>
             </div>
       </header>
       
@@ -162,19 +162,58 @@
 <gcse:search linktarget="_parent"></gcse:search>
 
 
-<p>Following my <a href="http://thinkingco.de/techblog/rails-3-is_documentable-with-activeadmin/">2012 post!!!</a> I finally managed to write down a small Rails 4 engine that allows anyone to add multiple files to any model in his rails app.</p>
+<p>I&rsquo;ve longed for long to have a statically generated website.</p>
 
-<p>The gem has the highly innovative name of: <strong>AttachIt</strong>.</p>
+<p>I&rsquo;ve always found wordpress not to be inline with my vision of as thin code as possible.</p>
 
-<p>As the original post also took into account ActiveAdmin I managed to add the same functionalities to ActiveAdmin also.</p>
+<p>This is where <a href="http://gohugo.io">Hugo</a> came into play. I find it particularly attractive because:</p>
 
-<p>The gem is thought for use in the show action for your model.</p>
+<ol>
+<li>it is blazing fast (you can rebuild your site in milliseconds)</li>
+<li>it is written in <a href="https://golang.org">go</a> language which I find extremely interesting for its simplicity</li>
+<li>it is written by <a href="http://spf13.com">Steve Francia</a> of Docker, MongoDB, vim-spf13 and other project&rsquo;s fame</li>
+</ol>
 
-<p>I have a lot of websites with this requirement of handling multiple files for multiple models so I think this must be a fairly common pattern.</p>
+<p>I love docker and vim and now also <strong>Hugo!</strong></p>
 
-<p>I also use <a href="https://github.com/activeadmin/activeadmin">activeadmin</a> quite broadly and find it highly flexible. And it is indeed! Here I use <a href="http://www.dropzonejs.com">dropzonejs.com</a> inside activeadmin and also import bootstrap modal and grid to handle the responsive image gallery.</p>
+<p>Apart from copying the hugo website layout I also find it very pleasing to write content with it in <a href="http://daringfireball.net/projects/markdown/">markdown</a></p>
 
-<p>Enjoy: <a href="https://github.com/tommasop/attach_it">https://github.com/tommasop/attach_it</a></p>
+<p>and also find it very easy to deploy everything to <a href="https://pages.github.com/">github pages</a> through a <strong>git subtree</strong>.</p>
+
+<p>To setup your Hugo website you need to have a git repository on github.</p>
+
+<p>Remove the public directory from the .gitignore file. Hugo projects ignore it by default.</p>
+
+<p>Add the public directory to your repository:</p>
+
+<pre><code>git add public &amp;&amp; git commit -m &quot;Initial public subtree commit&quot;
+</code></pre>
+
+<p>Deploy the subtree to a different branch. Specify a relative path to your public directory with &ndash;prefix:</p>
+
+<pre><code>git subtree push --prefix public origin gh-pages
+</code></pre>
+
+<p>Develop normally, committing your entire repository to your default (master) branch.</p>
+
+<p>To deploy the public directory, run the subtree push command from the root directory:</p>
+
+<pre><code>git subtree push --prefix public origin gh-pages
+</code></pre>
+
+<p>Then you only need a <code>CNAME</code> file with your domain name inside and to CNAME your DNS to your default github.io domain:</p>
+
+<pre><code>CNAME thinkingco.de tommasop.github.io
+</code></pre>
+
+<p>Overall I&rsquo;m very happy with the new asset:</p>
+
+<ul>
+<li>no db</li>
+<li>no webserver</li>
+<li>no administrative console</li>
+<li><strong>just content</strong></li>
+</ul>
 
 <hr style="margin: 2em auto 0.25em;">
                       <div style="font-size: medium; font-style: italic; text-align: right;">Tommaso Patrizi</div>

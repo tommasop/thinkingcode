@@ -4,6 +4,11 @@ author: mithrandir
 date: 2014-01-04 02:33:24+00:00
 slug: deploy-rails-with-docker-part-2
 permalink: /2014/deploy-rails-with-docker-part-2
+tags:
+  - docker
+  - fluentd
+  - rails
+  - twelve-factor
 ---
 
 Series takeaways:

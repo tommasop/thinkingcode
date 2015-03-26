@@ -39,28 +39,6 @@
     </item>
     
     <item>
-      <title>Polymorphic attachments for Rails 4 and ActiveAdmin</title>
-      <link>http://thinkingco.de/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</link>
-      <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
-      
-      <guid>http://thinkingco.de/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</guid>
-      <description>&lt;p&gt;Following my &lt;a href=&#34;http://thinkingco.de/techblog/rails-3-is_documentable-with-activeadmin/&#34;&gt;2012 post!!!&lt;/a&gt; I finally managed to write down a small gem that allows anyone to add multiple files to any model in his rails app.&lt;/p&gt;
-
-&lt;p&gt;The gem has the highly innovative name of: &lt;strong&gt;AttachIt&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;As the original post also took into account ActiveAdmin I managed to add the same functionalities to ActiveAdmin also.&lt;/p&gt;
-
-&lt;p&gt;The gem is thought for use in the show action for your model.&lt;/p&gt;
-
-&lt;p&gt;I have a lot of websites with this requirement of handling multiple files for multiple models so I think this must be a fairly common pattern.&lt;/p&gt;
-
-&lt;p&gt;I also use &lt;a href=&#34;https://github.com/activeadmin/activeadmin&#34;&gt;activeadmin&lt;/a&gt; quite broadly and find it highly flexible. And it is indeed! Here I use &lt;a href=&#34;http://www.dropzonejs.com&#34;&gt;dropzonejs.com&lt;/a&gt; inside activeadmin and also import bootstrap modal and grid to handle the responsive image gallery.&lt;/p&gt;
-
-&lt;p&gt;Enjoy: &lt;a href=&#34;https://github.com/tommasop/attach_it&#34;&gt;https://github.com/tommasop/attach_it&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Migrate Joomla from Windows 2003 to Docker</title>
       <link>http://thinkingco.de/techblog/migrate-joomla-windows-2003-docker/</link>
       <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
@@ -326,6 +304,89 @@ docker run -d -name my-web-machine -p 80:80 -p 9000:22 -link my-site-db:mysql -v
 &lt;p&gt;So now we have all the db data in the my-data-store /data/mysql dir, all the website data in the my-data-store /data/www dir thus having a full backup can be achieved also with rsync on the /data dir.&lt;/p&gt;
 
 &lt;p&gt;We can also access the Apache2 PHP container through ssh using the host ip address on port 9000 and from inside the Apache container connect to the MariaDB through mysql client.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Polymorphic attachments for Rails 4 and ActiveAdmin</title>
+      <link>http://thinkingco.de/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</link>
+      <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
+      
+      <guid>http://thinkingco.de/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</guid>
+      <description>&lt;p&gt;Following my &lt;a href=&#34;http://thinkingco.de/techblog/rails-3-is_documentable-with-activeadmin/&#34;&gt;2012 post!!!&lt;/a&gt; I finally managed to write down a small Rails 4 engine that allows anyone to add multiple files to any model in his rails app.&lt;/p&gt;
+
+&lt;p&gt;The gem has the highly innovative name of: &lt;strong&gt;AttachIt&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;As the original post also took into account ActiveAdmin I managed to add the same functionalities to ActiveAdmin also.&lt;/p&gt;
+
+&lt;p&gt;The gem is thought for use in the show action for your model.&lt;/p&gt;
+
+&lt;p&gt;I have a lot of websites with this requirement of handling multiple files for multiple models so I think this must be a fairly common pattern.&lt;/p&gt;
+
+&lt;p&gt;I also use &lt;a href=&#34;https://github.com/activeadmin/activeadmin&#34;&gt;activeadmin&lt;/a&gt; quite broadly and find it highly flexible. And it is indeed! Here I use &lt;a href=&#34;http://www.dropzonejs.com&#34;&gt;dropzonejs.com&lt;/a&gt; inside activeadmin and also import bootstrap modal and grid to handle the responsive image gallery.&lt;/p&gt;
+
+&lt;p&gt;Enjoy: &lt;a href=&#34;https://github.com/tommasop/attach_it&#34;&gt;https://github.com/tommasop/attach_it&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>New Hugo site and deployment workflow</title>
+      <link>http://thinkingco.de/techblog/new-hugo-site-and-deployment-workflow/</link>
+      <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
+      
+      <guid>http://thinkingco.de/techblog/new-hugo-site-and-deployment-workflow/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve longed for long to have a statically generated website.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve always found wordpress not to be inline with my vision of as thin code as possible.&lt;/p&gt;
+
+&lt;p&gt;This is where &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; came into play. I find it particularly attractive because:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;it is blazing fast (you can rebuild your site in milliseconds)&lt;/li&gt;
+&lt;li&gt;it is written in &lt;a href=&#34;https://golang.org&#34;&gt;go&lt;/a&gt; language which I find extremely interesting for its simplicity&lt;/li&gt;
+&lt;li&gt;it is written by &lt;a href=&#34;http://spf13.com&#34;&gt;Steve Francia&lt;/a&gt; of Docker, MongoDB, vim-spf13 and other project&amp;rsquo;s fame&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I love docker and vim and now also &lt;strong&gt;Hugo!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Apart from copying the hugo website layout I also find it very pleasing to write content with it in &lt;a href=&#34;http://daringfireball.net/projects/markdown/&#34;&gt;markdown&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;and also find it very easy to deploy everything to &lt;a href=&#34;https://pages.github.com/&#34;&gt;github pages&lt;/a&gt; through a &lt;strong&gt;git subtree&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;To setup your Hugo website you need to have a git repository on github.&lt;/p&gt;
+
+&lt;p&gt;Remove the public directory from the .gitignore file. Hugo projects ignore it by default.&lt;/p&gt;
+
+&lt;p&gt;Add the public directory to your repository:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git add public &amp;amp;&amp;amp; git commit -m &amp;quot;Initial public subtree commit&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Deploy the subtree to a different branch. Specify a relative path to your public directory with &amp;ndash;prefix:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git subtree push --prefix public origin gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Develop normally, committing your entire repository to your default (master) branch.&lt;/p&gt;
+
+&lt;p&gt;To deploy the public directory, run the subtree push command from the root directory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git subtree push --prefix public origin gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then you only need a &lt;code&gt;CNAME&lt;/code&gt; file with your domain name inside and to CNAME your DNS to your default github.io domain:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;CNAME thinkingco.de tommasop.github.io
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Overall I&amp;rsquo;m very happy with the new asset:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;no db&lt;/li&gt;
+&lt;li&gt;no webserver&lt;/li&gt;
+&lt;li&gt;no administrative console&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;just content&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -1399,72 +1460,6 @@ The only task was then to parse the last method name from the chain:&lt;/p&gt;
 &lt;p&gt;They improved the way pure_ruby EventMachine ruby can be loaded and you have to modify it like this:&lt;/p&gt;
 
 &lt;p&gt;In the end just build the new gem from the gemspec and install it.&lt;/strike&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Rails 3 is_documentable with activeadmin</title>
-      <link>http://thinkingco.de/techblog/rails-3-is_documentable-with-activeadmin/</link>
-      <pubDate>Wed, 11 Jul 2012 02:33:24 &#43;0000</pubDate>
-      
-      <guid>http://thinkingco.de/techblog/rails-3-is_documentable-with-activeadmin/</guid>
-      <description>&lt;p&gt;I need to add the chance to add as many documents as needed for several models of a Rails 3 app.&lt;/p&gt;
-
-&lt;p&gt;Each model is something that can have associated drawings, administrative acts and so forth.&lt;/p&gt;
-
-&lt;p&gt;To avoid duplication as far as possible I opted for an acts_as like feature for documents.&lt;/p&gt;
-
-&lt;p&gt;It will be called acts as documentable.&lt;/p&gt;
-
-&lt;p&gt;The acts as coding pattern rely on the &lt;a href=&#34;http://guides.rubyonrails.org/association_basics.html#polymorphic-associations&#34;&gt;polymorphic association&lt;/a&gt; with which a model can belong to more than one other model, on a single association.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;#8217;s see what this means.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;#8217;s imagine we have three models: User, Project and Tasks.&lt;/p&gt;
-
-&lt;p&gt;We want each model to be able to store n documents uploaded by a user.&lt;/p&gt;
-
-&lt;p&gt;With a polymorphic association we can obtain this result with the following Rails code:&lt;/p&gt;
-
-&lt;p&gt;The polymorphic reference in the migration automatically creates two columns:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;documentable_id&lt;/strong&gt;: the id of the object to which the document will be added&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;documentable_type&lt;/strong&gt;: the class name of the object to which the document will be added&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In this way Rails will be able to add n documents to each model which will be documentable.&lt;/p&gt;
-
-&lt;p&gt;We thus need a way to extend each model with the Documentable module.&lt;/p&gt;
-
-&lt;p&gt;This is achieved extending ActiveRecord::Base and is the &lt;strong&gt;&amp;#8220;standard&amp;#8221;&lt;/strong&gt; way of structuring a gem extension for ActiveRecord.&lt;/p&gt;
-
-&lt;p&gt;Here is the structure:&lt;/p&gt;
-
-&lt;p&gt;The documentable.rb file should be saved in the &lt;strong&gt;lib&lt;/strong&gt; folder.&lt;/p&gt;
-
-&lt;p&gt;In Rails 3 because of the assets pipeline files included in the lib folder are no longer loaded by default.&lt;/p&gt;
-
-&lt;p&gt;You both need to explicitly load files in the lib AND require them! I know it sounds strange but it&amp;#8217;s the only way I managed to extend ActiveRecord with my Documentable module.&lt;/p&gt;
-
-&lt;p&gt;Now I can extend my models with the is_documentable class method and let them be able to have many documents:&lt;/p&gt;
-
-&lt;p&gt;Now let&amp;#8217;s throw in a couple more things:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;dragonfly&lt;/strong&gt; to upload files&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;activeadmin&lt;/strong&gt; to manage documents&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For dragonfly nothing interesting, just follow the &lt;a href=&#34;http://markevans.github.com/dragonfly/file.README.html&#34;&gt;rails 3 quick start guide&lt;/a&gt; and use the &lt;strong&gt;file_accessor&lt;/strong&gt; instead of the image_accessor.&lt;/p&gt;
-
-&lt;p&gt;Something more interesting for activeadmin. Here you can add a nested form for your documents using the wonderful &lt;strong&gt;has_many&lt;/strong&gt; form method:&lt;/p&gt;
-
-&lt;p&gt;What this code does is simply to add a nested form for documents with buttons to add and remove each document!&lt;/p&gt;
-
-&lt;p&gt;If you want some more info on the has_many method &lt;a href=&#34;https://github.com/gregbell/active_admin/issues/59&#34;&gt;check this page on active_admin&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Maybe I&amp;#8217;ll set up a gem &amp;#8230;. sometime &amp;#8230;.&lt;/p&gt;
 </description>
     </item>
     

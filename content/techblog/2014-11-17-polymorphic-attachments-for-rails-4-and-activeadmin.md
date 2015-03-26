@@ -4,8 +4,13 @@ author: mithrandir
 date: 2014-01-04 02:33:24+00:00
 slug: polymorphic-attachments-for-rails-4-and-activeadmin
 permalink: /2014/polymorphic-attachments-for-rails-4-and-activeadmin
+tags:
+  - rails
+  - dragonfly
+  - dropzone
+  - activeadmin
 ---
-Following my [2012 post!!!][1] I finally managed to write down a small gem that allows anyone to add multiple files to any model in his rails app.
+Following my [2012 post!!!][1] I finally managed to write down a small Rails 4 engine that allows anyone to add multiple files to any model in his rails app.
 
 The gem has the highly innovative name of: **AttachIt**.
 
