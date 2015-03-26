@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ex chaos simplicitas">
+    <meta name="author" content="Tommaso Patrizi">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <title>Easy Peasy Deploy</title>
+
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style-responsive.css" rel="stylesheet" />
+    <link href="/css/monokai_sublime.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+  
+  <section id="container" class="">
+
+      
+      <header class="header black-bg">
+            <div class="toggle-nav">
+                <i class="fa fa-bars"></i>
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
+            </div>
+
+            
+            <a href="/" class="logo"><img src="/img/tcode-tr-sm.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;"></span></a>
+            
+            <div class="top-nav notification-row">
+                
+                <div class="hidden-xs pull-right">
+                    <a href="https://github.com/tommasop" class="fa fa-github">octocat</a>         
+                    <a href="https://twitter.com/tommasomatic" class="fa fa-twitter">twitter</a>
+                </div>
+            </div>
+
+            <div class="nav title-row" id="top_menu">
+                <h1 class="nav top-menu">Easy Peasy Deploy</h1>
+            </div>
+      </header>
+      
+
+
+<aside>
+    <div id="sidebar" class="nav-collapse">
+        
+        <ul class="sidebar-menu">
+          
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-male'></i>
+                
+                <span>Me</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="http://thinkingco.de/me/my-life/">My Life</a> </li>
+                    
+                    <li><a href="http://thinkingco.de/me/my-job/">My Job</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="/techblog/">
+                    <i class='fa fa-code'></i>
+                    
+                    <span>Technology</span>
+                </a>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="/notes/">
+                    <i class='fa fa-file-text-o'></i>
+                    
+                    <span>Notes</span>
+                </a>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="/portfolio/">
+                    <i class='fa fa-briefcase'></i>
+                    
+                    <span>Portfolio</span>
+                </a>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="/blog/">
+                    <i class='fa fa-heart'></i>
+                    
+                    <span>Other Topics</span>
+                </a>
+              
+              </li>
+          
+
+        </ul>
+        
+    </div>
+</aside>
+
+
+
+      
+      <section id="main-content">
+          <section class="wrapper">
+
+              
+                  
+                      
+                      
+                          
+                          
+                          
+                      
+                      
+                  
+              
+
+              <div class="row">
+                  <div class="col-md-1">
+                      
+                      
+                      
+                  </div>
+                <div class="col-md-10">
+                    <section class="panel">
+                          
+                              
+                          
+                    <div class="panel-body">
+<script>
+(function() {
+  var cx = '004940163756227230940:9tdbvl9bwk4';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+    '//www.google.com/cse/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script>
+<gcse:search linktarget="_parent"></gcse:search>
+
+
+<p>I&#8217;m a bit tired of reinventing the wheel every time I need to deploy a rails app.</p>
+
+<p>Capistrano has made the good decision to use rake instead of his own DSL so I&#8217;ll follow that path.</p>
+
+<p>I need a <code>deploy.rake</code> file with some tasks inside.</p>
+
+<p>I want to be able to perform ssh commands but I&#8217;d also like a good DSL for this so I ended up using the <a href="https://github.com/capistrano/sshkit" target="_blank">same tool Capistrano uses: sshkit</a>.</p>
+
+<p>It is a very lightweight gem with some good syntactic sugar for ssh commands.<br />
+It basically has four commands that wraps ssh and system commands.<br />
+We can see the use of run_locally and capture in the following task.</p>
+
+<pre class="brush: ruby; title: ; notranslate" title=""># run_locally runs a command on your local machine
+  # useful if you need to add LOCAL machine pub key to REMOTE machine authorized_keys if not present
+     run_locally do         
+        within '~' do        
+          remote_authorized_keys = capture("ssh #{MY.deploy_user}@#{MY.machine} 'cat ~/.ssh/authorized_keys'")
+          # capture as its name implies captures the stdout of the command and returns a String
+          # you can check to see if the the keys include your key
+          if !remote_authorized_keys.include?(capture("cat ~/.ssh/id_rsa.pub"))
+            execute("cat ~/.ssh/id_rsa.pub | ssh #{MY.deploy_user}@#{MY.machine} 'mkdir ~/.ssh; cat &gt;&gt; ~/.ssh/authorized_keys'")
+          end
+        end
+     end
+</pre>
+
+<p>The other two commands <code>test</code> and <code>execute</code> works together in the following task:</p>
+
+<pre class="brush: ruby; title: ; notranslate" title=""># test returns true or false
+  unless test "[ -d /var/rails ]"
+      # execute runs the command
+      # accepted syntax --&gt; :sudo, :mkdir, :rails || "sudo mkdir rails" or :sudo, "mkdir #{MY.deploy_to}"
+      execute :sudo, :mkdir, :rails   
+  end
+</pre>
+
+<p>Armed with sshkit and my understanding of what a simple rails deployment has to do I ended up with the following ideas about my deploy.rake.</p>
+
+<p>It will be split into several files:</p>
+
+<ul>
+<li>Machine Preparation</li>
+<li>Db setup (with specific file for every supported db starting with PostgreSQL)</li>
+<li>Deploy with Git</li>
+</ul>
+
+<p>I&#8217;m starting with the Deploy part. I&#8217;m assuming the following: use of rvm and Ubuntu 12.04. In any case migrating to different tools should not be too painful!</p>
+
+<p>The Deploy script will have three basic tasks:</p>
+
+<ol>
+<li>deploy:setup</li>
+<li>deploy:update</li>
+<li>deploy:rollback</li>
+</ol>
+
+<p>deploy:setup will</p>
+
+<ul>
+<li>clone the repo</li>
+<li>run bundle install</li>
+<li>run db:migrate and db:seed</li>
+<li>run assets:precompile</li>
+</ul>
+
+<p>deploy:update will:</p>
+
+<ul>
+<li>fetch the last commit</li>
+<li>run bundle install if Gemfile is changed</li>
+<li>run db:migrate if database.yml or db/ folder changed</li>
+<li>run assets:precompile if assets/ folder changed</li>
+</ul>
+
+<p>deploy:rollback will:</p>
+
+<ul>
+<li>check and store if Gemfile, db or assets changed</li>
+<li>rollback db if changed</li>
+<li>revert to previous commit (git back, git back &#8230; git back to where you once belonged)</li>
+<li>bundle install if Gemfile was different</li>
+<li>assets precompile if assets were different</li>
+</ul>
+
+<p>It is not easy to be able to use a remote environment configuration (included a modified $PATH) in ssh (useful if you are in need to use a specifically installed ruby version).</p>
+
+<p>This is because when you are deploying an app ssh won&#8217;t use an interactive shell but a <strong>non interactive</strong> one. This means that you basically lose all the <code>.profile .bash_profile .bashrc</code> configurations.</p>
+
+<p>To be able to add path and env options to your non interactive shell the only solution (please advice if you have another way to do it) seems to edit <code>/etc/ssh/sshd_config</code>, and uncomment this line:</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">PermitUserEnvironment yes
+</pre>
+
+<p>Configure the environment you want to be loaded in <code>$HOME/.ssh/environment</code> and restart sshd.</p>
+
+<p>This works well but leaves a potential security hole in your machine. This is why I&#8217;m evaluating if it is possible to wrap the needing calls in two tasks that will change the sshd configuration and revert it back. For now I&#8217;ll leave it configured this way.</p>
+
+<p>The first problem I need to face is how to share configuration parameters between rake files.</p>
+
+<p>I want to be able to split rake files to have a single file for each concern: <code>machine.rake deploy.rake database.rake</code>.</p>
+
+<p>This means that I need to require all those files in my main rake file like this:</p>
+
+<pre class="brush: ruby; title: ; notranslate" title=""># Load all tasks from easy_peasy dir
+Dir['./easy_peasy/*.rake'].each{ |f| require f }
+</pre>
+
+<p>Requiring files means I can&#8217;t use local variables to store configuration data because they won&#8217;t be available.</p>
+
+<p>So I ended up opting for an OpenStruct which enables options definition on the fly, instantiated in a constant available through files:</p>
+
+<pre class="brush: ruby; title: ; notranslate" title=""># Configuration data put in an OpenStruct constant 
+  # to make them available to all rake files
+  MY = OpenStruct.new
+  MY.machine = 'machine_ip_or_dns'
+  MY.deploy_user = 'deployer'
+  MY.deploy_host = SSHKit::Host.new("#{MY.deploy_user}@#{MY.machine}")
+  MY.deploy_to   = 'deploy_folder'
+  MY.remote_path = "/var/rails/#{MY.deploy_to}"
+  MY.git_repo    = 'git@github.com:user/repo.git'
+  MY.git_branch  = 'branch'
+</pre>
+
+<p>With this code in place I will be able to call configuration in other files simply by calling:</p>
+
+<pre class="brush: ruby; title: ; notranslate" title="">MY.deploy_user
+</pre>
+
+<p>Now here is my bare <code>deploy.rake</code> file with the three actions and comments to explain what&#8217;s going on:</p>
+
+<pre class="brush: ruby; title: ; notranslate" title="">namespace :deploy do
+  desc "Easy Peasy Setup"
+  task :setup do 
+    # Setup directory and permissions on remote host
+    on MY.deploy_host do |host|
+      unless test "[ -d #{MY.remote_path} ]"
+        within "/var/rails" do
+          execute :git, :clone, MY.git_repo 
+          execute :bundle, :install
+          execute :rake, 'db:migrate'
+          execute :rake, 'db:seed'
+          execute :rake, 'assets:precompile'
+        end
+      end
+    end
+  end
+
+  desc "Easy Peasy Update"
+  task :update do
+    on MY.deploy_host do |host|
+      within MY.remote_path do
+        execute :git, :fetch
+        execute :git, :reset, "--hard origin/#{MY.git_branch}"
+        execute :bundle, :install if test("git diff HEAD^ HEAD | grep Gemfile")
+        execute :rake, 'db:migrate' if test("git diff HEAD^ HEAD | grep database.yml") || test("git diff HEAD^ HEAD -- db/")
+        execute :rake, 'assets:precompile' if test("git diff HEAD^ HEAD -- assets/")
+      end
+    end
+  end
+  
+  desc "Easy Peasy Rollback"
+  task :rollback do 
+    on MY.deploy_host do |host|
+      within MY.remote_path do
+        # Before gitting back I need to rollback the db
+        execute :rake, 'db:rollback' if test("git diff HEAD^ HEAD | grep database.yml") || test("git diff HEAD^ HEAD -- db/")
+        # And store Gemfile and assets changes before gitting back
+        gem_changes = test("git diff HEAD^ HEAD | grep Gemfile")
+        assets_changes = test("git diff HEAD^ HEAD -- assets/")
+        # I then git back
+        execute :git, :reset, '--hard HEAD^' 
+        # And eventually perform bundle install and assets precompile
+        # if there were previous changes
+        execute :bundle, :install if gem_changes
+        execute :rake, 'assets:precompile' if assets_changes
+      end
+    end
+  end
+end
+</pre>
+
+<p>The next article will be about the Machine Preparation.</p>
+
+<hr style="margin: 2em auto 0.25em;">
+                      <div style="font-size: medium; font-style: italic; text-align: right;">Tommaso Patrizi</div>
+                    </div>
+                    </section>
+                </div>
+                <div class="col-md-1">
+                    
+                    
+                    
+                </div>
+              </div>
+              
+          </section>
+      </section>
+     
+  </section>
+  
+    
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script src="/js/jquery.scrollTo.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/scripts.js"></script>
+    <script async defer id="github-bjs" src="/js/buttons.js"></script>
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-7131036-4', 'thinkingco.de');
+ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
+

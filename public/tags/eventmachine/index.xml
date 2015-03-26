@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Eventmachine on  </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://thinkingco.de/tags/eventmachine/index.xml/</link>
+    
+    
+    
+    <updated>Sat, 30 Jun 2012 02:33:24 &#43;0000</updated>
+    
+    <item>
+      <title>RealTime dashboard: ruby, eventmachine and d3.js</title>
+      <link>http://thinkingco.de/techblog/realtime-dashboard-ruby-eventmachine-and-d3-js/</link>
+      <pubDate>Sat, 30 Jun 2012 02:33:24 &#43;0000</pubDate>
+      
+      <guid>http://thinkingco.de/techblog/realtime-dashboard-ruby-eventmachine-and-d3-js/</guid>
+      <description>&lt;p&gt;We need to build a dashboard for a field veichle through which we collect different street data.&lt;/p&gt;
+
+&lt;p&gt;We have two lasers used to monitor the status of pavimentation and three accelerometers to monitor that data acquisition be consistent and without spikes.&lt;/p&gt;
+
+&lt;p&gt;We have a GPS to georeference all the collected data and a video camera to actually see the road and be able to log the presence of different kind of elements on the road graph.&lt;/p&gt;
+
+&lt;p&gt;Finally we have an odometer to get actual vehicle speed.&lt;/p&gt;
+
+&lt;p&gt;All these data are collected each 200ms.&lt;/p&gt;
+
+&lt;p&gt;Data are collected in different ways:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;lasers and accelerometers values are written on a delimited txt file&lt;/li&gt;
+&lt;li&gt;gps data are collected directly with its sdk through USB&lt;/li&gt;
+&lt;li&gt;the camera takes 10 pictures/s which are written in a folder&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;I will focus here on lasers and accelerometers values which are all saved in a semicolon delimited file.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Data are collected through file modification/creation and this is the reason behind my first architectural choice:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;let the filesystem trigger change events in the dashboard&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is the fastest way to react to data changes since nothing can be more responsive than the filesystem itself to changes happening in its domain.&lt;/p&gt;
+
+&lt;p&gt;Since I use ruby I can easily hook into filesystem events with these libraries:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;for OSX rb-fsevents&lt;/li&gt;
+&lt;li&gt;for Linux rb-inotify&lt;/li&gt;
+&lt;li&gt;for Windows win32-changenotify&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Then I needed a way to communicate real time with my web frontend.&lt;br /&gt;
+I opted for eventmachine (because it&amp;#8217;s ruby!) and web sockets.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;eventmachine-tail&lt;/strong&gt; is not working on Windows because it leverages the eventmachine FileWatch class which actually is not compatible with Windows.&lt;/p&gt;
+
+&lt;p&gt;Furthermore &lt;strong&gt;win32-changenotify&lt;/strong&gt; is not the good choice for NTFS systems, you should use &lt;strong&gt;win32-changejournal&lt;/strong&gt; which is not installing on my Windows 7 machine &lt;a href=&#34;https://github.com/djberg96/win32-changejournal/issues/3&#34;&gt;see issue here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So I changed approach and am now using &lt;a href=&#34;https://github.com/jordansissel/ruby-filewatch&#34;&gt;ruby-filewatch&lt;/a&gt; to tail my windows file (and OSX/Linux/Solaris) instead of eventmachine-tail.&lt;/p&gt;
+
+&lt;p&gt;&lt;strike&gt;This brought about the natural choice of &lt;a href=&#34;https://github.com/jordansissel/eventmachine-tail&#34;&gt;eventmachine-tail&lt;/a&gt; for file tailing.&lt;/strike&gt;&lt;/p&gt;
+
+&lt;p&gt;For the websocket there is &lt;a href=&#34;https://github.com/igrigorik/em-websocket&#34;&gt;em-websocket&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So here is the bare minimum for my websocket tail server:&lt;/p&gt;
+
+&lt;p&gt;The core server creates a channel (embryonic em pub sub) and a web socket server on port 8080.&lt;/p&gt;
+
+&lt;p&gt;Every connection to the web socket subscribes to the channel which is a dual synchronous communication way between server and all connected clients all in few lines of code.&lt;/p&gt;
+
+&lt;p&gt;Now that the server is working let&amp;#8217;s think about the client.&lt;/p&gt;
+
+&lt;p&gt;The client here will be a browser connecting to the web socket server through javascript.&lt;/p&gt;
+
+&lt;p&gt;But you know javascript is so unrubyish I opted for a coffeescript object to manage the websocket connections. Here it is:&lt;/p&gt;
+
+&lt;p&gt;As you might have noticed we need jQuery.&lt;/p&gt;
+
+&lt;p&gt;So to put everything together you need to:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Start the eventmachine ruby server&lt;/li&gt;
+&lt;li&gt;Start a webpage which includes the WSConnector class&lt;/li&gt;
+&lt;li&gt;Start adding semicolon delimited data to the tailed file&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Point two needs further elaboration because you need to setup a simple rack application to compile coffescript and eventually scss and bundle all js and css into two files.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;ll deal about this aspect in another post.&lt;/p&gt;
+
+&lt;p&gt;The final bare html page will be something along these lines:&lt;/p&gt;
+
+&lt;p&gt;As you can see I&amp;#8217;m using &lt;a href=&#34;http://code.shutterstock.com/rickshaw/&#34;&gt;Rickshaw&lt;/a&gt; which is a tool built on d3.js especially crafted for interactive time series line graphs.&lt;/p&gt;
+
+&lt;p&gt;In tv var I specify the time interval which for my project is 200 milliseconds. I then instantiate an svg (d3.js) area of 600&amp;#215;200 pixels.&lt;/p&gt;
+
+&lt;p&gt;Another interesting thing is the &lt;strong&gt;maxDataPoints&lt;/strong&gt; option which tells to Rickshaw to keep a maximum of 100 values at a time.&lt;/p&gt;
+
+&lt;p&gt;The two data_values I&amp;#8217;m pushing into Rickshaw are the ones you can find in the &lt;strong&gt;WSConnector onmessage&lt;/strong&gt; method.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
