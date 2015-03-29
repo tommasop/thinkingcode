@@ -1,0 +1,11 @@
+{{ partial "header.html" . }}
+
+  {{ range .Data.Pages.ByDate.Reverse }}
+  {{ .Render "summary"}}
+  {{ end }}
+
+<br><br>
+If you think I can help you somehow don't hesitate to <a href="mailto:tommasop@thinkingco.de">email me</a> or twit me.
+
+{{ partial "footer.html" . }}
+

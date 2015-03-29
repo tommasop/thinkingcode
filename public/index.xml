@@ -7,7 +7,27 @@
     
     
     
-    <updated>Fri, 27 Mar 2015 00:22:00 &#43;0000</updated>
+    <updated>Sun, 29 Mar 2015 00:22:00 &#43;0000</updated>
+    
+    <item>
+      <title>No root CNAME DNS</title>
+      <link>http://thinkingco.de/notes/no-root-cname-dns/</link>
+      <pubDate>Sun, 29 Mar 2015 00:22:00 &#43;0000</pubDate>
+      
+      <guid>http://thinkingco.de/notes/no-root-cname-dns/</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;CNAME in apex&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;WHAT:&lt;/strong&gt; CNAME in apex is forbidden by the RFC.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;WHY:&lt;/strong&gt; CNAME overrides all other records. Therefore it&amp;rsquo;s impossible to construct a valid zone where the apex has a CNAME, since it would also override the SOA.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;MY EXPERIENCE:&lt;/strong&gt; I tried to setup github pages on my domain root &lt;code&gt;thinkingco.de&lt;/code&gt; what happened was that my &lt;code&gt;fastmail.com&lt;/code&gt; account stopped to work correctly.&lt;/p&gt;
+
+&lt;p&gt;What I did was to switch my github pages on &lt;code&gt;www.thinkingco.de&lt;/code&gt; and then add a redirect.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>New Hugo site and deployment workflow</title>
@@ -1406,60 +1426,6 @@ The only task was then to parse the last method name from the chain:&lt;/p&gt;
 &lt;p&gt;So I was left with one choice: ssh console.&lt;/p&gt;
 
 &lt;p&gt;I enabled it directly in the vSphere terminal and then managed to start up my Win 7 machine with some console ninja secret commandssssss &amp;#8230;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>EventMachine &amp;#038; SerialPort</title>
-      <link>http://thinkingco.de/techblog/eventmachine-serialport/</link>
-      <pubDate>Thu, 06 Sep 2012 02:33:24 &#43;0000</pubDate>
-      
-      <guid>http://thinkingco.de/techblog/eventmachine-serialport/</guid>
-      <description>&lt;p&gt;I need to communicate with an inertial platform to track GPS data in a dashboard.&lt;/p&gt;
-
-&lt;p&gt;As the dashboard is working with EventMachine I decided to use &lt;a href=&#34;https://github.com/hparra/ruby-serialport&#34;&gt;ruby-serialport&lt;/a&gt; with EventMachine.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;em-serialport is &lt;strong&gt;not working on Windows&lt;/strong&gt; furthermore, having a good chat on the irc eventmachine channel, the use of eventmachine pure ruby library is not at all efficient.&lt;/p&gt;
-
-&lt;p&gt;First of all you can now install eventmachine version 1.0.0 on Windows.&lt;/p&gt;
-
-&lt;p&gt;Then I decided to follow the approach used in &lt;a href=&#34;https://github.com/shokai/serialport-server/blob/master/bin/serialport-server&#34;&gt;serialport-server&lt;/a&gt; to listen to my serialport.&lt;/p&gt;
-
-&lt;p&gt;The idea is simple: wrap the serial port connection in a websocket&amp;#8217;s one.&lt;/p&gt;
-
-&lt;p&gt;Now in the main eventmachine reactor I can open a TCP server websocket connection to my Serial Port like this:&lt;/p&gt;
-
-&lt;p&gt;It is working very well both on Windows and on OSX.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;THIS IS USELESS PLEASE DON&amp;#8217;T USE IT&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strike&gt;I found out there is a nice &lt;a href=&#34;https://github.com/railsbob/em-serialport&#34;&gt;em-serialport&lt;/a&gt; gem than can do the job.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately my dashboard will run on a Windows 7 pc.&lt;/p&gt;
-
-&lt;p&gt;So here comes the first problem: the actual version of EventMachine (0.12.10) will not compile on windows.&lt;/p&gt;
-
-&lt;p&gt;It is a well known issue and you simply will not be able to install it (nor any 0.12 version for what it matters).&lt;/p&gt;
-
-&lt;p&gt;There is a solution though and it is to install the version 1.0.0.rc&lt;/p&gt;
-
-&lt;p&gt;EventMachine will compile flawlessly and you will once more be a happy programmer.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately your happiness will not last because em-serialport requires in its gemspec eventmachine 0.12.10.&lt;/p&gt;
-
-&lt;p&gt;So when you install em-serialport on windows it will complain that it cannot install EventMachine.&lt;/p&gt;
-
-&lt;p&gt;If you force the gem installation with the &amp;#8211;no-dependencies flag it will install but when you require it it will happily blow up.&lt;/p&gt;
-
-&lt;p&gt;So you need to change the gemspec file setting the pre version of EventMachine.&lt;/p&gt;
-
-&lt;p&gt;Then you need to make another change in em-serialport.rb&lt;/p&gt;
-
-&lt;p&gt;They improved the way pure_ruby EventMachine ruby can be loaded and you have to modify it like this:&lt;/p&gt;
-
-&lt;p&gt;In the end just build the new gem from the gemspec and install it.&lt;/strike&gt;&lt;/p&gt;
 </description>
     </item>
     
