@@ -1,7 +1,7 @@
 ---
 title: No root CNAME DNS
 author: mithrandir
-date: 2015-03-29 00:22:00+00:00
+date: 2015-03-29 20:00:00+00:00
 slug: no-root-cname-dns
 permalink: /2015/no-root-cname-dns
 tags:
