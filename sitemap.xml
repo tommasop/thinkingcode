@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://thinkingco.de/</loc>
-    <lastmod>2015-03-27T00:22:00+00:00</lastmod>
+    <lastmod>2015-03-29T00:22:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://thinkingco.de/notes/no-root-cname-dns/</loc>
+    <lastmod>2015-03-29T00:22:00+00:00</lastmod>
   </url>
   
   <url>
