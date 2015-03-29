@@ -7,12 +7,27 @@
     
     
     
-    <updated>Sun, 29 Mar 2015 00:22:00 &#43;0000</updated>
+    <updated>Sun, 29 Mar 2015 20:44:00 &#43;0000</updated>
+    
+    <item>
+      <title>Git stash content</title>
+      <link>http://thinkingco.de/notes/git-stash-content/</link>
+      <pubDate>Sun, 29 Mar 2015 20:44:00 &#43;0000</pubDate>
+      
+      <guid>http://thinkingco.de/notes/git-stash-content/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;WHAT:&lt;/strong&gt; If you need to check your git stash content&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;HOW:&lt;/strong&gt; You can use:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git stash show -p stash@{0}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>No root CNAME DNS</title>
       <link>http://thinkingco.de/notes/no-root-cname-dns/</link>
-      <pubDate>Sun, 29 Mar 2015 00:22:00 &#43;0000</pubDate>
+      <pubDate>Sun, 29 Mar 2015 20:00:00 &#43;0000</pubDate>
       
       <guid>http://thinkingco.de/notes/no-root-cname-dns/</guid>
       <description>
@@ -1388,44 +1403,6 @@ I found out that in the ruby Kernel there is a method called &lt;strong&gt;calle
 The only task was then to parse the last method name from the chain:&lt;/p&gt;
 
 &lt;p&gt;The parse_answer method ended up being coded like this:&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Start vSphere machine from OSX</title>
-      <link>http://thinkingco.de/techblog/start-vsphere-machine-from-osx/</link>
-      <pubDate>Tue, 11 Sep 2012 02:33:24 &#43;0000</pubDate>
-      
-      <guid>http://thinkingco.de/techblog/start-vsphere-machine-from-osx/</guid>
-      <description>&lt;p&gt;So I have a vSphere 5.1 free Hypervisor installed on a HP Microserver.&lt;/p&gt;
-
-&lt;p&gt;Very nice hardware, very nice piece of software, so far so good.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately I don&amp;#8217;t have a Windows machine in my house except for a Win 7 which is virtualized on the vSphere machine.&lt;/p&gt;
-
-&lt;p&gt;I don&amp;#8217;t want to install a Windows virtual machine on my MacBook just to start my Win 7 machine on the vSphere center.&lt;/p&gt;
-
-&lt;p&gt;The virtualized Win 7 machine is equipped with vSphere Client.&lt;/p&gt;
-
-&lt;p&gt;I tried several methods:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Ruby RVC (Remote Vsphere Console)&lt;/li&gt;
-&lt;li&gt;iPad vShpere application&lt;/li&gt;
-&lt;li&gt;vSphere Web Client&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;None of these worked.&lt;/p&gt;
-
-&lt;p&gt;Ruby RVC cannot be used to perform API write operations with the free HyperVisor, it can be used with the trial (60 days) version or any other paid version.&lt;/p&gt;
-
-&lt;p&gt;Both the iPad vSphere app and the web client option need the web client API to be enabled.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;This can be done &amp;#8230;. you guess it &amp;#8230;.. only from a Windows machine!!!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;So I was left with one choice: ssh console.&lt;/p&gt;
-
-&lt;p&gt;I enabled it directly in the vSphere terminal and then managed to start up my Win 7 machine with some console ninja secret commandssssss &amp;#8230;&lt;/p&gt;
 </description>
     </item>
     
