@@ -7,7 +7,26 @@
     
     
     
-    <updated>Sun, 29 Mar 2015 20:44:00 &#43;0000</updated>
+    <updated>Fri, 03 Apr 2015 22:38:00 &#43;0000</updated>
+    
+    <item>
+      <title>Email from static site</title>
+      <link>http://thinkingco.de/notes/email-from-static-site/</link>
+      <pubDate>Fri, 03 Apr 2015 22:38:00 &#43;0000</pubDate>
+      
+      <guid>http://thinkingco.de/notes/email-from-static-site/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;WHAT:&lt;/strong&gt; HUGO is a great static site generator but I need a contact form.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;HOW:&lt;/strong&gt; You can use &lt;code&gt;http://formspree.io/&lt;/code&gt; an &lt;a href=&#34;https://github.com/asm-products/formspree&#34;&gt;open sourced&lt;/a&gt; project that makes sending email as easy as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;form action=&amp;quot;//formspree.io/you@email.com&amp;quot;&amp;gt;
+    &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;name&amp;quot;&amp;gt;
+    &amp;lt;input type=&amp;quot;email&amp;quot; name=&amp;quot;_replyto&amp;quot;&amp;gt;
+    &amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;Send&amp;quot;&amp;gt;
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Git stash content</title>
@@ -1377,32 +1396,6 @@ So per certo che continueranno ad agitare l&amp;#8217;evasione degli idraulici e
 &lt;p&gt;In our terminal capitalistic society the solution is simply to destroy life and real economy (see what&amp;rsquo;s happening to Greece).&lt;/p&gt;
 
 &lt;p&gt;How can we refactor this code so that it can be useful to life instead of destroying it?&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Who&#39;s calling? (I mean ruby method)</title>
-      <link>http://thinkingco.de/techblog/whos-calling-i-mean-ruby-method/</link>
-      <pubDate>Wed, 03 Oct 2012 02:33:24 &#43;0000</pubDate>
-      
-      <guid>http://thinkingco.de/techblog/whos-calling-i-mean-ruby-method/</guid>
-      <description>&lt;p&gt;I needed to know which method was calling another method in a ruby app.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;m writing a legacy protocol parser and need to control that received packets from the serial port stream are matching with commands replies.&lt;/p&gt;
-
-&lt;p&gt;So I have a set of methods performing some commands and constants which represent correct replies:&lt;/p&gt;
-
-&lt;p&gt;I wanted to be able to have the following interface to parse reply packets so that I can adapt the correct answer on the basis of the sent command:&lt;/p&gt;
-
-&lt;p&gt;So I had to find a way to dynamically call the reply packet constant.&lt;/p&gt;
-
-&lt;p&gt;I already named the constants with the same name as the called command prepended by an &lt;strong&gt;R_&lt;/strong&gt; standing for reply.&lt;/p&gt;
-
-&lt;p&gt;The main problem was how to find the &lt;strong&gt;calling_method&lt;/strong&gt;.&lt;br /&gt;
-I found out that in the ruby Kernel there is a method called &lt;strong&gt;caller&lt;/strong&gt; which prints the calling chain in a ruby script.&lt;br /&gt;
-The only task was then to parse the last method name from the chain:&lt;/p&gt;
-
-&lt;p&gt;The parse_answer method ended up being coded like this:&lt;/p&gt;
 </description>
     </item>
     
