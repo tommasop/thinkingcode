@@ -7,7 +7,7 @@
     <meta name="author" content="Tommaso Patrizi">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-    <title>Notes</title>
+    <title>Insert into mysql table if not exists</title>
 
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -40,7 +40,7 @@
             </div>
 
             <div class="nav title-row" id="top_menu">
-                <h1 class="nav top-menu">Notes</h1>
+                <h1 class="nav top-menu">Insert into mysql table if not exists</h1>
             </div>
       </header>
       
@@ -138,6 +138,8 @@
               <div class="row">
                   <div class="col-md-1">
                       
+                      
+                      
                   </div>
                 <div class="col-md-10">
                     <section class="panel">
@@ -160,63 +162,17 @@
 <gcse:search></gcse:search>
 
 
+<p><strong>WHAT:</strong> I needed to insert some records into a table but only if the record was not already present.</p>
 
-  
-  <article class="post">
-<header>
-  <h2><a href='http://thinkingco.de/notes/insert-into-mysql-table-if-not-exists/'> Insert into mysql table if not exists</a> </h2>
-  <h5 class="meta">Fri, Apr 3, 2015</h5>
-</header>
+<p><strong>HOW:</strong></p>
 
-WHAT: I needed to insert some records into a table but only if the record was not already present. HOW: INSERT IGNORE is the way to do this in mysql, it silently fails the instruction if it finds an existing record and proceeds. INSERT IGNORE INTO destination_table (value1, value2, value3) SELECT e.value1, 'fixed_value', e.value3 FROM source_table e WHERE condition1 AND condition2
-<footer>
-  <a href='http://thinkingco.de/notes/insert-into-mysql-table-if-not-exists/'><nobr>Read more →</nobr></a>
-</footer>
-</article>
+<p><code>INSERT IGNORE</code> is the way to do this in mysql, it silently fails the instruction if it finds an existing record and proceeds.</p>
 
-  
-  <article class="post">
-<header>
-  <h2><a href='http://thinkingco.de/notes/email-from-static-site/'> Email from static site</a> </h2>
-  <h5 class="meta">Fri, Apr 3, 2015</h5>
-</header>
-
-WHAT: HUGO is a great static site generator but I need a contact form. HOW: You can use http://formspree.io/ an open sourced project that makes sending email as easy as: &lt;form action=&quot;//formspree.io/you@email.com&quot;&gt; &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt; &lt;input type=&quot;email&quot; name=&quot;_replyto&quot;&gt; &lt;input type=&quot;submit&quot; value=&quot;Send&quot;&gt; &lt;/form&gt;
-<footer>
-  <a href='http://thinkingco.de/notes/email-from-static-site/'><nobr>Read more →</nobr></a>
-</footer>
-</article>
-
-  
-  <article class="post">
-<header>
-  <h2><a href='http://thinkingco.de/notes/git-stash-content/'> Git stash content</a> </h2>
-  <h5 class="meta">Sun, Mar 29, 2015</h5>
-</header>
-
-WHAT: If you need to check your git stash content HOW: You can use: git stash show -p stash@{0}
-<footer>
-  <a href='http://thinkingco.de/notes/git-stash-content/'><nobr>Read more →</nobr></a>
-</footer>
-</article>
-
-  
-  <article class="post">
-<header>
-  <h2><a href='http://thinkingco.de/notes/no-root-cname-dns/'> No root CNAME DNS</a> </h2>
-  <h5 class="meta">Sun, Mar 29, 2015</h5>
-</header>
-
-CNAME in apex WHAT: CNAME in apex is forbidden by the RFC. WHY: CNAME overrides all other records. Therefore it&rsquo;s impossible to construct a valid zone where the apex has a CNAME, since it would also override the SOA. MY EXPERIENCE: I tried to setup github pages on my domain root thinkingco.de what happened was that my fastmail.com account stopped to work correctly. What I did was to switch my github pages on www.thinkingco.de and then add a redirect.
-<footer>
-  <a href='http://thinkingco.de/notes/no-root-cname-dns/'><nobr>Read more →</nobr></a>
-</footer>
-</article>
-
-  
-
-<br><br>
-If you think I can help you somehow don't hesitate to <a href="mailto:tommasop@thinkingco.de">email me</a> or twit me.
+<pre><code>INSERT IGNORE INTO destination_table (value1, value2, value3)
+SELECT e.value1, 'fixed_value', e.value3
+FROM source_table e
+WHERE condition1 AND condition2
+</code></pre>
 
 <hr style="margin: 2em auto 0.25em;">
                       <div style="font-size: medium; font-style: italic; text-align: right;">Tommaso Patrizi</div>
@@ -224,6 +180,8 @@ If you think I can help you somehow don't hesitate to <a href="mailto:tommasop@t
                     </section>
                 </div>
                 <div class="col-md-1">
+                    
+                    
                     
                 </div>
               </div>
@@ -253,5 +211,4 @@ ga('send', 'pageview');
 
   </body>
 </html>
-
 
