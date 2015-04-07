@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Mysql on  </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://thinkingco.de/tags/mysql/index.xml/</link>
+    
+    
+    
+    <updated>Fri, 03 Apr 2015 22:38:00 &#43;0000</updated>
+    
+    <item>
+      <title>Insert into mysql table if not exists</title>
+      <link>http://thinkingco.de/notes/insert-into-mysql-table-if-not-exists/</link>
+      <pubDate>Fri, 03 Apr 2015 22:38:00 &#43;0000</pubDate>
+      
+      <guid>http://thinkingco.de/notes/insert-into-mysql-table-if-not-exists/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;WHAT:&lt;/strong&gt; I needed to insert some records into a table but only if the record was not already present.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;HOW:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;INSERT IGNORE&lt;/code&gt; is the way to do this in mysql, it silently fails the instruction if it finds an existing record and proceeds.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;INSERT IGNORE INTO destination_table (value1, value2, value3)
+SELECT e.value1, &#39;fixed_value&#39;, e.value3
+FROM source_table e
+WHERE condition1 AND condition2
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
