@@ -3,7 +3,7 @@
   <channel>
       <title>Blogs on  </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://thinkingco.de/blog/index.xml/</link>
+    <link>http://localhost:1313/blog/index.xml/</link>
     
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>L&#39;Uomo è maggiormente confortato dai paradossi G.K. Chesterton</title>
-      <link>http://thinkingco.de/blog/luomo-e-maggiormente-confortato-dai-paradossi-g-k-chesterton/</link>
+      <link>http://localhost:1313/blog/luomo-e-maggiormente-confortato-dai-paradossi-g-k-chesterton/</link>
       <pubDate>Wed, 14 Aug 2013 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/blog/luomo-e-maggiormente-confortato-dai-paradossi-g-k-chesterton/</guid>
+      <guid>http://localhost:1313/blog/luomo-e-maggiormente-confortato-dai-paradossi-g-k-chesterton/</guid>
       <description>&lt;p&gt;Introduzione al Libro di Giobbe di G. K. Chesterton (tradotto da me in italiano)&lt;/p&gt;
 
 &lt;p&gt;Il libro di Giobbe é, nell’ambito degli Altri libri del Vecchio Testamento, sia un enigma filosofico che un enigma storico.&lt;/p&gt;
@@ -52,10 +52,10 @@ Si immaginano che i patriarchi vadano intesi come dei modelli; si immaginano che
     
     <item>
       <title>Elezioni 2013</title>
-      <link>http://thinkingco.de/blog/elezioni-2013/</link>
+      <link>http://localhost:1313/blog/elezioni-2013/</link>
       <pubDate>Tue, 05 Feb 2013 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/blog/elezioni-2013/</guid>
+      <guid>http://localhost:1313/blog/elezioni-2013/</guid>
       <description>&lt;p&gt;Si avvicina l&amp;#8217;unico momento in cui la &amp;#8220;democrazia&amp;#8221; ci fornisce la possibilità (sia pure porcellanamente limitata) di dire la nostra su quello che sarà il comune destino per i prossimi 4 anni.&lt;/p&gt;
 
 &lt;p&gt;Normalmente ho approcciato questo momento con sensazioni più o meno forti di nausea e ho sempre finito per non essere in grado di votare quello che tutti continuavano a definire come il male minore. In tutta coscienza non me la sono mai sentita di dare il mio voto a uno qualsiasi dei teatranti che animavano e animano ormai da &lt;sup&gt;30&lt;/sup&gt;&amp;frasl;&lt;sub&gt;40&lt;/sub&gt; anni quella farsa che chiamiamo la repubblica (minuscolo) italiana.&lt;/p&gt;
@@ -166,10 +166,10 @@ So per certo che continueranno ad agitare l&amp;#8217;evasione degli idraulici e
     
     <item>
       <title>The extreme need of money Refactoring</title>
-      <link>http://thinkingco.de/blog/the-extreme-need-of-money-refactoring/</link>
+      <link>http://localhost:1313/blog/the-extreme-need-of-money-refactoring/</link>
       <pubDate>Wed, 03 Oct 2012 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/blog/the-extreme-need-of-money-refactoring/</guid>
+      <guid>http://localhost:1313/blog/the-extreme-need-of-money-refactoring/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Time is Money&lt;/strong&gt; is a sentence which has become a symbol of our capitalistic society.&lt;/p&gt;
 
 &lt;p&gt;This highly condensed capitalistic bible brings in its meaning that whoever owns money owns time, owns our time.&lt;/p&gt;

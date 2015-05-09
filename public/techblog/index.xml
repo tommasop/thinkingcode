@@ -3,7 +3,7 @@
   <channel>
       <title>Techblogs on  </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://thinkingco.de/techblog/index.xml/</link>
+    <link>http://localhost:1313/techblog/index.xml/</link>
     
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>New Hugo site and deployment workflow</title>
-      <link>http://thinkingco.de/techblog/new-hugo-site-and-deployment-workflow/</link>
+      <link>http://localhost:1313/techblog/new-hugo-site-and-deployment-workflow/</link>
       <pubDate>Fri, 27 Mar 2015 00:22:00 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/techblog/new-hugo-site-and-deployment-workflow/</guid>
+      <guid>http://localhost:1313/techblog/new-hugo-site-and-deployment-workflow/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve longed for long to have a statically generated website.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve always found wordpress not to be inline with my vision of as thin code as possible.&lt;/p&gt;
@@ -72,10 +72,10 @@
     
     <item>
       <title>Polymorphic attachments for Rails 4 and ActiveAdmin</title>
-      <link>http://thinkingco.de/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</link>
+      <link>http://localhost:1313/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</link>
       <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</guid>
+      <guid>http://localhost:1313/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</guid>
       <description>&lt;p&gt;Following my &lt;a href=&#34;http://thinkingco.de/techblog/rails-3-is_documentable-with-activeadmin/&#34;&gt;2012 post!!!&lt;/a&gt; I finally managed to write down a small Rails 4 engine that allows anyone to add multiple files to any model in his rails app.&lt;/p&gt;
 
 &lt;p&gt;The gem has the highly innovative name of: &lt;strong&gt;AttachIt&lt;/strong&gt;.&lt;/p&gt;
@@ -94,10 +94,10 @@
     
     <item>
       <title>Migrate Joomla from Windows 2003 to Docker</title>
-      <link>http://thinkingco.de/techblog/migrate-joomla-windows-2003-docker/</link>
+      <link>http://localhost:1313/techblog/migrate-joomla-windows-2003-docker/</link>
       <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/techblog/migrate-joomla-windows-2003-docker/</guid>
+      <guid>http://localhost:1313/techblog/migrate-joomla-windows-2003-docker/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Migrate Apache2/PHP website to docker&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Before continuing my series on rails deployment with docker in a PAASY environment I needed to migrate and existing Joomla 1.5 from a Windows 2003 machine to an Azure Ubuntu Linux 12.04.&lt;/p&gt;
@@ -363,10 +363,10 @@ docker run -d -name my-web-machine -p 80:80 -p 9000:22 -link my-site-db:mysql -v
     
     <item>
       <title>Deploy Rails with Docker, Part 2</title>
-      <link>http://thinkingco.de/techblog/deploy-rails-with-docker-part-2/</link>
+      <link>http://localhost:1313/techblog/deploy-rails-with-docker-part-2/</link>
       <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/techblog/deploy-rails-with-docker-part-2/</guid>
+      <guid>http://localhost:1313/techblog/deploy-rails-with-docker-part-2/</guid>
       <description>
 
 &lt;p&gt;Series takeaways:&lt;/p&gt;
@@ -631,10 +631,10 @@ More interestingly if you need to migrate your data to a new host you can do:
     
     <item>
       <title>2014 thinning list</title>
-      <link>http://thinkingco.de/techblog/2014-thinning-list/</link>
+      <link>http://localhost:1313/techblog/2014-thinning-list/</link>
       <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/techblog/2014-thinning-list/</guid>
+      <guid>http://localhost:1313/techblog/2014-thinning-list/</guid>
       <description>&lt;p&gt;To be faithful to my motto&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -660,10 +660,10 @@ More interestingly if you need to migrate your data to a new host you can do:
     
     <item>
       <title>Deployment Rails with Docker Part 1</title>
-      <link>http://thinkingco.de/techblog/deploy-rails-with-docker-part-1/</link>
+      <link>http://localhost:1313/techblog/deploy-rails-with-docker-part-1/</link>
       <pubDate>Wed, 11 Dec 2013 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/techblog/deploy-rails-with-docker-part-1/</guid>
+      <guid>http://localhost:1313/techblog/deploy-rails-with-docker-part-1/</guid>
       <description>
 
 &lt;p&gt;After my &lt;a href=&#34;http://thinkingco.de/easy-peasy-deploy&#34;&gt;first approach&lt;/a&gt; to easying up the many pains of Rails deployment I happened to bump into &lt;a href=&#34;http://www.docker.io&#34;&gt;Docker&lt;/a&gt; for a broader PAAS project.&lt;/p&gt;
@@ -838,10 +838,10 @@ sudo apt-get install lxc-docker
     
     <item>
       <title>Easy Peasy Deploy</title>
-      <link>http://thinkingco.de/techblog/easy-peasy-deploy/</link>
+      <link>http://localhost:1313/techblog/easy-peasy-deploy/</link>
       <pubDate>Thu, 14 Nov 2013 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/techblog/easy-peasy-deploy/</guid>
+      <guid>http://localhost:1313/techblog/easy-peasy-deploy/</guid>
       <description>&lt;p&gt;I&amp;#8217;m a bit tired of reinventing the wheel every time I need to deploy a rails app.&lt;/p&gt;
 
 &lt;p&gt;Capistrano has made the good decision to use rake instead of his own DSL so I&amp;#8217;ll follow that path.&lt;/p&gt;
@@ -1029,10 +1029,10 @@ end
     
     <item>
       <title>Multithreaded Rails App 4 REAL</title>
-      <link>http://thinkingco.de/techblog/multithreaded-rails-app-4-real/</link>
+      <link>http://localhost:1313/techblog/multithreaded-rails-app-4-real/</link>
       <pubDate>Tue, 29 Oct 2013 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/techblog/multithreaded-rails-app-4-real/</guid>
+      <guid>http://localhost:1313/techblog/multithreaded-rails-app-4-real/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://rubini.us/2013/10/04/rubinius-2-0-released/&#34;&gt;Rubinius 2.0&lt;/a&gt; (actually 2.1.1) is out and with it rails apps can finally be fully multithreaded taking advantage of multicore processors and substantially reducing memory consumption (&lt;a href=&#34;http://miguelcamba.com/blog/2013/10/05/benchmarking-the-ruby-2-dot-1-and-rubinius-2-dot-0/&#34;&gt;benchmark of latest ruby implementations&lt;/a&gt;).&lt;/p&gt;
 
 &lt;p&gt;Im currently porting a Rails 2 app to Rails 4. It is a patients management app with also image management.&lt;/p&gt;
@@ -1096,10 +1096,10 @@ end
     
     <item>
       <title>Tailing problems in Windows</title>
-      <link>http://thinkingco.de/techblog/tailing-problems-in-windows/</link>
+      <link>http://localhost:1313/techblog/tailing-problems-in-windows/</link>
       <pubDate>Sun, 17 Feb 2013 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/techblog/tailing-problems-in-windows/</guid>
+      <guid>http://localhost:1313/techblog/tailing-problems-in-windows/</guid>
       <description>&lt;p&gt;I built this beautiful dashboard collecting data from different sensors on a high efficiency vehicle.&lt;/p&gt;
 
 &lt;p&gt;I opted for an html page with server-events.&lt;/p&gt;
@@ -1129,10 +1129,10 @@ end
     
     <item>
       <title>Who&#39;s calling? (I mean ruby method)</title>
-      <link>http://thinkingco.de/techblog/whos-calling-i-mean-ruby-method/</link>
+      <link>http://localhost:1313/techblog/whos-calling-i-mean-ruby-method/</link>
       <pubDate>Wed, 03 Oct 2012 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/techblog/whos-calling-i-mean-ruby-method/</guid>
+      <guid>http://localhost:1313/techblog/whos-calling-i-mean-ruby-method/</guid>
       <description>&lt;p&gt;I needed to know which method was calling another method in a ruby app.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;m writing a legacy protocol parser and need to control that received packets from the serial port stream are matching with commands replies.&lt;/p&gt;
@@ -1155,10 +1155,10 @@ The only task was then to parse the last method name from the chain:&lt;/p&gt;
     
     <item>
       <title>Start vSphere machine from OSX</title>
-      <link>http://thinkingco.de/techblog/start-vsphere-machine-from-osx/</link>
+      <link>http://localhost:1313/techblog/start-vsphere-machine-from-osx/</link>
       <pubDate>Tue, 11 Sep 2012 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/techblog/start-vsphere-machine-from-osx/</guid>
+      <guid>http://localhost:1313/techblog/start-vsphere-machine-from-osx/</guid>
       <description>&lt;p&gt;So I have a vSphere 5.1 free Hypervisor installed on a HP Microserver.&lt;/p&gt;
 
 &lt;p&gt;Very nice hardware, very nice piece of software, so far so good.&lt;/p&gt;
@@ -1193,10 +1193,10 @@ The only task was then to parse the last method name from the chain:&lt;/p&gt;
     
     <item>
       <title>EventMachine &amp;#038; SerialPort</title>
-      <link>http://thinkingco.de/techblog/eventmachine-serialport/</link>
+      <link>http://localhost:1313/techblog/eventmachine-serialport/</link>
       <pubDate>Thu, 06 Sep 2012 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/techblog/eventmachine-serialport/</guid>
+      <guid>http://localhost:1313/techblog/eventmachine-serialport/</guid>
       <description>&lt;p&gt;I need to communicate with an inertial platform to track GPS data in a dashboard.&lt;/p&gt;
 
 &lt;p&gt;As the dashboard is working with EventMachine I decided to use &lt;a href=&#34;https://github.com/hparra/ruby-serialport&#34;&gt;ruby-serialport&lt;/a&gt; with EventMachine.&lt;/p&gt;
@@ -1247,10 +1247,10 @@ The only task was then to parse the last method name from the chain:&lt;/p&gt;
     
     <item>
       <title>Rails 3 is_documentable with activeadmin</title>
-      <link>http://thinkingco.de/techblog/rails-3-is_documentable-with-activeadmin/</link>
+      <link>http://localhost:1313/techblog/rails-3-is_documentable-with-activeadmin/</link>
       <pubDate>Wed, 11 Jul 2012 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/techblog/rails-3-is_documentable-with-activeadmin/</guid>
+      <guid>http://localhost:1313/techblog/rails-3-is_documentable-with-activeadmin/</guid>
       <description>&lt;p&gt;I need to add the chance to add as many documents as needed for several models of a Rails 3 app.&lt;/p&gt;
 
 &lt;p&gt;Each model is something that can have associated drawings, administrative acts and so forth.&lt;/p&gt;
@@ -1313,10 +1313,10 @@ The only task was then to parse the last method name from the chain:&lt;/p&gt;
     
     <item>
       <title>RealTime dashboard: ruby, eventmachine and d3.js</title>
-      <link>http://thinkingco.de/techblog/realtime-dashboard-ruby-eventmachine-and-d3-js/</link>
+      <link>http://localhost:1313/techblog/realtime-dashboard-ruby-eventmachine-and-d3-js/</link>
       <pubDate>Sat, 30 Jun 2012 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/techblog/realtime-dashboard-ruby-eventmachine-and-d3-js/</guid>
+      <guid>http://localhost:1313/techblog/realtime-dashboard-ruby-eventmachine-and-d3-js/</guid>
       <description>&lt;p&gt;We need to build a dashboard for a field veichle through which we collect different street data.&lt;/p&gt;
 
 &lt;p&gt;We have two lasers used to monitor the status of pavimentation and three accelerometers to monitor that data acquisition be consistent and without spikes.&lt;/p&gt;
@@ -1408,10 +1408,10 @@ I opted for eventmachine (because it&amp;#8217;s ruby!) and web sockets.&lt;/p&g
     
     <item>
       <title>My Website stack: WNWS</title>
-      <link>http://thinkingco.de/techblog/my-website-stack-wnws/</link>
+      <link>http://localhost:1313/techblog/my-website-stack-wnws/</link>
       <pubDate>Fri, 08 Jun 2012 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/techblog/my-website-stack-wnws/</guid>
+      <guid>http://localhost:1313/techblog/my-website-stack-wnws/</guid>
       <description>&lt;p&gt;After much thinking and wondering around through many solutions I opted for the following stack:&lt;/p&gt;
 
 &lt;blockquote&gt;
