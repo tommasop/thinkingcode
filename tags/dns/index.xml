@@ -3,7 +3,7 @@
   <channel>
       <title>Dns on  </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://thinkingco.de/tags/dns/index.xml/</link>
+    <link>http://localhost:1313/tags/dns/index.xml/</link>
     
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>No root CNAME DNS</title>
-      <link>http://thinkingco.de/notes/no-root-cname-dns/</link>
+      <link>http://localhost:1313/notes/no-root-cname-dns/</link>
       <pubDate>Sun, 29 Mar 2015 20:00:00 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/notes/no-root-cname-dns/</guid>
+      <guid>http://localhost:1313/notes/no-root-cname-dns/</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;CNAME in apex&lt;/h2&gt;

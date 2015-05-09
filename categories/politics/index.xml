@@ -3,7 +3,7 @@
   <channel>
       <title>Politics on  </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://thinkingco.de/categories/politics/index.xml/</link>
+    <link>http://localhost:1313/categories/politics/index.xml/</link>
     
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Elezioni 2013</title>
-      <link>http://thinkingco.de/blog/elezioni-2013/</link>
+      <link>http://localhost:1313/blog/elezioni-2013/</link>
       <pubDate>Tue, 05 Feb 2013 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://thinkingco.de/blog/elezioni-2013/</guid>
+      <guid>http://localhost:1313/blog/elezioni-2013/</guid>
       <description>&lt;p&gt;Si avvicina l&amp;#8217;unico momento in cui la &amp;#8220;democrazia&amp;#8221; ci fornisce la possibilità (sia pure porcellanamente limitata) di dire la nostra su quello che sarà il comune destino per i prossimi 4 anni.&lt;/p&gt;
 
 &lt;p&gt;Normalmente ho approcciato questo momento con sensazioni più o meno forti di nausea e ho sempre finito per non essere in grado di votare quello che tutti continuavano a definire come il male minore. In tutta coscienza non me la sono mai sentita di dare il mio voto a uno qualsiasi dei teatranti che animavano e animano ormai da &lt;sup&gt;30&lt;/sup&gt;&amp;frasl;&lt;sub&gt;40&lt;/sub&gt; anni quella farsa che chiamiamo la repubblica (minuscolo) italiana.&lt;/p&gt;

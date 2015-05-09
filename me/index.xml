@@ -3,7 +3,7 @@
   <channel>
       <title>Mes on  </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://thinkingco.de/me/index.xml/</link>
+    <link>http://localhost:1313/me/index.xml/</link>
     
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>My Life</title>
-      <link>http://thinkingco.de/me/my-life/</link>
+      <link>http://localhost:1313/me/my-life/</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
       
-      <guid>http://thinkingco.de/me/my-life/</guid>
+      <guid>http://localhost:1313/me/my-life/</guid>
       <description>&lt;p&gt;My name is Tommaso and I live in Rome, Italy.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;m married with my wonderful wife Chiara we have a gorgeous baby named Giovanni and a new one coming in September 2015.&lt;/p&gt;
@@ -50,10 +50,10 @@ From a broader perspective the problem ultimately lies in the illuministic divor
     
     <item>
       <title>My Job</title>
-      <link>http://thinkingco.de/me/my-job/</link>
+      <link>http://localhost:1313/me/my-job/</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
       
-      <guid>http://thinkingco.de/me/my-job/</guid>
+      <guid>http://localhost:1313/me/my-job/</guid>
       <description>&lt;p&gt;IT Freelance since 2001.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve been mainly working for two companies in the last years: the largest IT Training network in Italy PCSNET Srl and the biggest privately owned road safety focused company in Italy AISICO Srl.&lt;/p&gt;
