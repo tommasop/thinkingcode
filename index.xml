@@ -3,7 +3,7 @@
   <channel>
       <title>Recent Content on  </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://localhost:1313/index.xml/</link>
+    <link>http://thinkingco.de/index.xml/</link>
     
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Email from static site</title>
-      <link>http://localhost:1313/notes/email-from-static-site/</link>
+      <link>http://thinkingco.de/notes/email-from-static-site/</link>
       <pubDate>Fri, 03 Apr 2015 22:38:00 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/notes/email-from-static-site/</guid>
+      <guid>http://thinkingco.de/notes/email-from-static-site/</guid>
       <description>&lt;p&gt;&lt;strong&gt;WHAT:&lt;/strong&gt; HUGO is a great static site generator but I need a contact form.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;HOW:&lt;/strong&gt; You can use &lt;code&gt;http://formspree.io/&lt;/code&gt; an &lt;a href=&#34;https://github.com/asm-products/formspree&#34;&gt;open sourced&lt;/a&gt; project that makes sending email as easy as:&lt;/p&gt;
@@ -30,10 +30,10 @@
     
     <item>
       <title>Insert into mysql table if not exists</title>
-      <link>http://localhost:1313/notes/insert-into-mysql-table-if-not-exists/</link>
+      <link>http://thinkingco.de/notes/insert-into-mysql-table-if-not-exists/</link>
       <pubDate>Fri, 03 Apr 2015 22:38:00 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/notes/insert-into-mysql-table-if-not-exists/</guid>
+      <guid>http://thinkingco.de/notes/insert-into-mysql-table-if-not-exists/</guid>
       <description>&lt;p&gt;&lt;strong&gt;WHAT:&lt;/strong&gt; I needed to insert some records into a table but only if the record was not already present.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;HOW:&lt;/strong&gt;&lt;/p&gt;
@@ -50,10 +50,10 @@ WHERE condition1 AND condition2
     
     <item>
       <title>Git stash content</title>
-      <link>http://localhost:1313/notes/git-stash-content/</link>
+      <link>http://thinkingco.de/notes/git-stash-content/</link>
       <pubDate>Sun, 29 Mar 2015 20:44:00 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/notes/git-stash-content/</guid>
+      <guid>http://thinkingco.de/notes/git-stash-content/</guid>
       <description>&lt;p&gt;&lt;strong&gt;WHAT:&lt;/strong&gt; If you need to check your git stash content&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;HOW:&lt;/strong&gt; You can use:&lt;/p&gt;
@@ -65,10 +65,10 @@ WHERE condition1 AND condition2
     
     <item>
       <title>No root CNAME DNS</title>
-      <link>http://localhost:1313/notes/no-root-cname-dns/</link>
+      <link>http://thinkingco.de/notes/no-root-cname-dns/</link>
       <pubDate>Sun, 29 Mar 2015 20:00:00 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/notes/no-root-cname-dns/</guid>
+      <guid>http://thinkingco.de/notes/no-root-cname-dns/</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;CNAME in apex&lt;/h2&gt;
@@ -85,10 +85,10 @@ WHERE condition1 AND condition2
     
     <item>
       <title>New Hugo site and deployment workflow</title>
-      <link>http://localhost:1313/techblog/new-hugo-site-and-deployment-workflow/</link>
+      <link>http://thinkingco.de/techblog/new-hugo-site-and-deployment-workflow/</link>
       <pubDate>Fri, 27 Mar 2015 00:22:00 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/techblog/new-hugo-site-and-deployment-workflow/</guid>
+      <guid>http://thinkingco.de/techblog/new-hugo-site-and-deployment-workflow/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve longed for long to have a statically generated website.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve always found wordpress not to be inline with my vision of as thin code as possible.&lt;/p&gt;
@@ -146,10 +146,10 @@ WHERE condition1 AND condition2
     
     <item>
       <title>2014 thinning list</title>
-      <link>http://localhost:1313/techblog/2014-thinning-list/</link>
+      <link>http://thinkingco.de/techblog/2014-thinning-list/</link>
       <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/techblog/2014-thinning-list/</guid>
+      <guid>http://thinkingco.de/techblog/2014-thinning-list/</guid>
       <description>&lt;p&gt;To be faithful to my motto&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -175,10 +175,10 @@ WHERE condition1 AND condition2
     
     <item>
       <title>Polymorphic attachments for Rails 4 and ActiveAdmin</title>
-      <link>http://localhost:1313/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</link>
+      <link>http://thinkingco.de/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</link>
       <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</guid>
+      <guid>http://thinkingco.de/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</guid>
       <description>&lt;p&gt;Following my &lt;a href=&#34;http://thinkingco.de/techblog/rails-3-is_documentable-with-activeadmin/&#34;&gt;2012 post!!!&lt;/a&gt; I finally managed to write down a small Rails 4 engine that allows anyone to add multiple files to any model in his rails app.&lt;/p&gt;
 
 &lt;p&gt;The gem has the highly innovative name of: &lt;strong&gt;AttachIt&lt;/strong&gt;.&lt;/p&gt;
@@ -197,10 +197,10 @@ WHERE condition1 AND condition2
     
     <item>
       <title>Migrate Joomla from Windows 2003 to Docker</title>
-      <link>http://localhost:1313/techblog/migrate-joomla-windows-2003-docker/</link>
+      <link>http://thinkingco.de/techblog/migrate-joomla-windows-2003-docker/</link>
       <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/techblog/migrate-joomla-windows-2003-docker/</guid>
+      <guid>http://thinkingco.de/techblog/migrate-joomla-windows-2003-docker/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Migrate Apache2/PHP website to docker&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Before continuing my series on rails deployment with docker in a PAASY environment I needed to migrate and existing Joomla 1.5 from a Windows 2003 machine to an Azure Ubuntu Linux 12.04.&lt;/p&gt;
@@ -466,10 +466,10 @@ docker run -d -name my-web-machine -p 80:80 -p 9000:22 -link my-site-db:mysql -v
     
     <item>
       <title>Deploy Rails with Docker, Part 2</title>
-      <link>http://localhost:1313/techblog/deploy-rails-with-docker-part-2/</link>
+      <link>http://thinkingco.de/techblog/deploy-rails-with-docker-part-2/</link>
       <pubDate>Sat, 04 Jan 2014 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/techblog/deploy-rails-with-docker-part-2/</guid>
+      <guid>http://thinkingco.de/techblog/deploy-rails-with-docker-part-2/</guid>
       <description>
 
 &lt;p&gt;Series takeaways:&lt;/p&gt;
@@ -734,10 +734,10 @@ More interestingly if you need to migrate your data to a new host you can do:
     
     <item>
       <title>Deployment Rails with Docker Part 1</title>
-      <link>http://localhost:1313/techblog/deploy-rails-with-docker-part-1/</link>
+      <link>http://thinkingco.de/techblog/deploy-rails-with-docker-part-1/</link>
       <pubDate>Wed, 11 Dec 2013 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/techblog/deploy-rails-with-docker-part-1/</guid>
+      <guid>http://thinkingco.de/techblog/deploy-rails-with-docker-part-1/</guid>
       <description>
 
 &lt;p&gt;After my &lt;a href=&#34;http://thinkingco.de/easy-peasy-deploy&#34;&gt;first approach&lt;/a&gt; to easying up the many pains of Rails deployment I happened to bump into &lt;a href=&#34;http://www.docker.io&#34;&gt;Docker&lt;/a&gt; for a broader PAAS project.&lt;/p&gt;
@@ -912,10 +912,10 @@ sudo apt-get install lxc-docker
     
     <item>
       <title>Easy Peasy Deploy</title>
-      <link>http://localhost:1313/techblog/easy-peasy-deploy/</link>
+      <link>http://thinkingco.de/techblog/easy-peasy-deploy/</link>
       <pubDate>Thu, 14 Nov 2013 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/techblog/easy-peasy-deploy/</guid>
+      <guid>http://thinkingco.de/techblog/easy-peasy-deploy/</guid>
       <description>&lt;p&gt;I&amp;#8217;m a bit tired of reinventing the wheel every time I need to deploy a rails app.&lt;/p&gt;
 
 &lt;p&gt;Capistrano has made the good decision to use rake instead of his own DSL so I&amp;#8217;ll follow that path.&lt;/p&gt;
@@ -1103,10 +1103,10 @@ end
     
     <item>
       <title>Multithreaded Rails App 4 REAL</title>
-      <link>http://localhost:1313/techblog/multithreaded-rails-app-4-real/</link>
+      <link>http://thinkingco.de/techblog/multithreaded-rails-app-4-real/</link>
       <pubDate>Tue, 29 Oct 2013 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/techblog/multithreaded-rails-app-4-real/</guid>
+      <guid>http://thinkingco.de/techblog/multithreaded-rails-app-4-real/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://rubini.us/2013/10/04/rubinius-2-0-released/&#34;&gt;Rubinius 2.0&lt;/a&gt; (actually 2.1.1) is out and with it rails apps can finally be fully multithreaded taking advantage of multicore processors and substantially reducing memory consumption (&lt;a href=&#34;http://miguelcamba.com/blog/2013/10/05/benchmarking-the-ruby-2-dot-1-and-rubinius-2-dot-0/&#34;&gt;benchmark of latest ruby implementations&lt;/a&gt;).&lt;/p&gt;
 
 &lt;p&gt;Im currently porting a Rails 2 app to Rails 4. It is a patients management app with also image management.&lt;/p&gt;
@@ -1170,10 +1170,10 @@ end
     
     <item>
       <title>L&#39;Uomo è maggiormente confortato dai paradossi G.K. Chesterton</title>
-      <link>http://localhost:1313/blog/luomo-e-maggiormente-confortato-dai-paradossi-g-k-chesterton/</link>
+      <link>http://thinkingco.de/blog/luomo-e-maggiormente-confortato-dai-paradossi-g-k-chesterton/</link>
       <pubDate>Wed, 14 Aug 2013 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/blog/luomo-e-maggiormente-confortato-dai-paradossi-g-k-chesterton/</guid>
+      <guid>http://thinkingco.de/blog/luomo-e-maggiormente-confortato-dai-paradossi-g-k-chesterton/</guid>
       <description>&lt;p&gt;Introduzione al Libro di Giobbe di G. K. Chesterton (tradotto da me in italiano)&lt;/p&gt;
 
 &lt;p&gt;Il libro di Giobbe é, nell’ambito degli Altri libri del Vecchio Testamento, sia un enigma filosofico che un enigma storico.&lt;/p&gt;
@@ -1211,10 +1211,10 @@ Si immaginano che i patriarchi vadano intesi come dei modelli; si immaginano che
     
     <item>
       <title>Tailing problems in Windows</title>
-      <link>http://localhost:1313/techblog/tailing-problems-in-windows/</link>
+      <link>http://thinkingco.de/techblog/tailing-problems-in-windows/</link>
       <pubDate>Sun, 17 Feb 2013 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/techblog/tailing-problems-in-windows/</guid>
+      <guid>http://thinkingco.de/techblog/tailing-problems-in-windows/</guid>
       <description>&lt;p&gt;I built this beautiful dashboard collecting data from different sensors on a high efficiency vehicle.&lt;/p&gt;
 
 &lt;p&gt;I opted for an html page with server-events.&lt;/p&gt;
@@ -1244,10 +1244,10 @@ Si immaginano che i patriarchi vadano intesi come dei modelli; si immaginano che
     
     <item>
       <title>Elezioni 2013</title>
-      <link>http://localhost:1313/blog/elezioni-2013/</link>
+      <link>http://thinkingco.de/blog/elezioni-2013/</link>
       <pubDate>Tue, 05 Feb 2013 02:33:24 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/blog/elezioni-2013/</guid>
+      <guid>http://thinkingco.de/blog/elezioni-2013/</guid>
       <description>&lt;p&gt;Si avvicina l&amp;#8217;unico momento in cui la &amp;#8220;democrazia&amp;#8221; ci fornisce la possibilità (sia pure porcellanamente limitata) di dire la nostra su quello che sarà il comune destino per i prossimi 4 anni.&lt;/p&gt;
 
 &lt;p&gt;Normalmente ho approcciato questo momento con sensazioni più o meno forti di nausea e ho sempre finito per non essere in grado di votare quello che tutti continuavano a definire come il male minore. In tutta coscienza non me la sono mai sentita di dare il mio voto a uno qualsiasi dei teatranti che animavano e animano ormai da &lt;sup&gt;30&lt;/sup&gt;&amp;frasl;&lt;sub&gt;40&lt;/sub&gt; anni quella farsa che chiamiamo la repubblica (minuscolo) italiana.&lt;/p&gt;

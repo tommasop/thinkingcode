@@ -3,7 +3,7 @@
   <channel>
       <title>Insert-Ignore on  </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://localhost:1313/tags/insert-ignore/index.xml/</link>
+    <link>http://thinkingco.de/tags/insert-ignore/index.xml/</link>
     
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Insert into mysql table if not exists</title>
-      <link>http://localhost:1313/notes/insert-into-mysql-table-if-not-exists/</link>
+      <link>http://thinkingco.de/notes/insert-into-mysql-table-if-not-exists/</link>
       <pubDate>Fri, 03 Apr 2015 22:38:00 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/notes/insert-into-mysql-table-if-not-exists/</guid>
+      <guid>http://thinkingco.de/notes/insert-into-mysql-table-if-not-exists/</guid>
       <description>&lt;p&gt;&lt;strong&gt;WHAT:&lt;/strong&gt; I needed to insert some records into a table but only if the record was not already present.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;HOW:&lt;/strong&gt;&lt;/p&gt;

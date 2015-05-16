@@ -3,7 +3,7 @@
   <channel>
       <title>Markdown on  </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://localhost:1313/tags/markdown/index.xml/</link>
+    <link>http://thinkingco.de/tags/markdown/index.xml/</link>
     
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>New Hugo site and deployment workflow</title>
-      <link>http://localhost:1313/techblog/new-hugo-site-and-deployment-workflow/</link>
+      <link>http://thinkingco.de/techblog/new-hugo-site-and-deployment-workflow/</link>
       <pubDate>Fri, 27 Mar 2015 00:22:00 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/techblog/new-hugo-site-and-deployment-workflow/</guid>
+      <guid>http://thinkingco.de/techblog/new-hugo-site-and-deployment-workflow/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve longed for long to have a statically generated website.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve always found wordpress not to be inline with my vision of as thin code as possible.&lt;/p&gt;

@@ -3,7 +3,7 @@
   <channel>
       <title>Notes on  </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://localhost:1313/notes/index.xml/</link>
+    <link>http://thinkingco.de/notes/index.xml/</link>
     
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Insert into mysql table if not exists</title>
-      <link>http://localhost:1313/notes/insert-into-mysql-table-if-not-exists/</link>
+      <link>http://thinkingco.de/notes/insert-into-mysql-table-if-not-exists/</link>
       <pubDate>Fri, 03 Apr 2015 22:38:00 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/notes/insert-into-mysql-table-if-not-exists/</guid>
+      <guid>http://thinkingco.de/notes/insert-into-mysql-table-if-not-exists/</guid>
       <description>&lt;p&gt;&lt;strong&gt;WHAT:&lt;/strong&gt; I needed to insert some records into a table but only if the record was not already present.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;HOW:&lt;/strong&gt;&lt;/p&gt;
@@ -31,10 +31,10 @@ WHERE condition1 AND condition2
     
     <item>
       <title>Email from static site</title>
-      <link>http://localhost:1313/notes/email-from-static-site/</link>
+      <link>http://thinkingco.de/notes/email-from-static-site/</link>
       <pubDate>Fri, 03 Apr 2015 22:38:00 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/notes/email-from-static-site/</guid>
+      <guid>http://thinkingco.de/notes/email-from-static-site/</guid>
       <description>&lt;p&gt;&lt;strong&gt;WHAT:&lt;/strong&gt; HUGO is a great static site generator but I need a contact form.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;HOW:&lt;/strong&gt; You can use &lt;code&gt;http://formspree.io/&lt;/code&gt; an &lt;a href=&#34;https://github.com/asm-products/formspree&#34;&gt;open sourced&lt;/a&gt; project that makes sending email as easy as:&lt;/p&gt;
@@ -50,10 +50,10 @@ WHERE condition1 AND condition2
     
     <item>
       <title>Git stash content</title>
-      <link>http://localhost:1313/notes/git-stash-content/</link>
+      <link>http://thinkingco.de/notes/git-stash-content/</link>
       <pubDate>Sun, 29 Mar 2015 20:44:00 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/notes/git-stash-content/</guid>
+      <guid>http://thinkingco.de/notes/git-stash-content/</guid>
       <description>&lt;p&gt;&lt;strong&gt;WHAT:&lt;/strong&gt; If you need to check your git stash content&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;HOW:&lt;/strong&gt; You can use:&lt;/p&gt;
@@ -65,10 +65,10 @@ WHERE condition1 AND condition2
     
     <item>
       <title>No root CNAME DNS</title>
-      <link>http://localhost:1313/notes/no-root-cname-dns/</link>
+      <link>http://thinkingco.de/notes/no-root-cname-dns/</link>
       <pubDate>Sun, 29 Mar 2015 20:00:00 &#43;0000</pubDate>
       
-      <guid>http://localhost:1313/notes/no-root-cname-dns/</guid>
+      <guid>http://thinkingco.de/notes/no-root-cname-dns/</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;CNAME in apex&lt;/h2&gt;
