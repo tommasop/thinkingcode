@@ -2,133 +2,133 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://thinkingco.de/</loc>
     <lastmod>2015-04-03T22:38:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/notes/email-from-static-site/</loc>
+    <loc>http://thinkingco.de/notes/email-from-static-site/</loc>
     <lastmod>2015-04-03T22:38:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/notes/insert-into-mysql-table-if-not-exists/</loc>
+    <loc>http://thinkingco.de/notes/insert-into-mysql-table-if-not-exists/</loc>
     <lastmod>2015-04-03T22:38:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/notes/git-stash-content/</loc>
+    <loc>http://thinkingco.de/notes/git-stash-content/</loc>
     <lastmod>2015-03-29T20:44:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/notes/no-root-cname-dns/</loc>
+    <loc>http://thinkingco.de/notes/no-root-cname-dns/</loc>
     <lastmod>2015-03-29T20:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/techblog/new-hugo-site-and-deployment-workflow/</loc>
+    <loc>http://thinkingco.de/techblog/new-hugo-site-and-deployment-workflow/</loc>
     <lastmod>2015-03-27T00:22:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/techblog/2014-thinning-list/</loc>
+    <loc>http://thinkingco.de/techblog/2014-thinning-list/</loc>
     <lastmod>2014-01-04T02:33:24+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</loc>
+    <loc>http://thinkingco.de/techblog/polymorphic-attachments-for-rails-4-and-activeadmin/</loc>
     <lastmod>2014-01-04T02:33:24+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/techblog/migrate-joomla-windows-2003-docker/</loc>
+    <loc>http://thinkingco.de/techblog/migrate-joomla-windows-2003-docker/</loc>
     <lastmod>2014-01-04T02:33:24+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/techblog/deploy-rails-with-docker-part-2/</loc>
+    <loc>http://thinkingco.de/techblog/deploy-rails-with-docker-part-2/</loc>
     <lastmod>2014-01-04T02:33:24+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/techblog/deploy-rails-with-docker-part-1/</loc>
+    <loc>http://thinkingco.de/techblog/deploy-rails-with-docker-part-1/</loc>
     <lastmod>2013-12-11T02:33:24+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/techblog/easy-peasy-deploy/</loc>
+    <loc>http://thinkingco.de/techblog/easy-peasy-deploy/</loc>
     <lastmod>2013-11-14T02:33:24+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/techblog/multithreaded-rails-app-4-real/</loc>
+    <loc>http://thinkingco.de/techblog/multithreaded-rails-app-4-real/</loc>
     <lastmod>2013-10-29T02:33:24+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/luomo-e-maggiormente-confortato-dai-paradossi-g-k-chesterton/</loc>
+    <loc>http://thinkingco.de/blog/luomo-e-maggiormente-confortato-dai-paradossi-g-k-chesterton/</loc>
     <lastmod>2013-08-14T02:33:24+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/techblog/tailing-problems-in-windows/</loc>
+    <loc>http://thinkingco.de/techblog/tailing-problems-in-windows/</loc>
     <lastmod>2013-02-17T02:33:24+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/elezioni-2013/</loc>
+    <loc>http://thinkingco.de/blog/elezioni-2013/</loc>
     <lastmod>2013-02-05T02:33:24+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/the-extreme-need-of-money-refactoring/</loc>
+    <loc>http://thinkingco.de/blog/the-extreme-need-of-money-refactoring/</loc>
     <lastmod>2012-10-03T02:33:24+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/techblog/whos-calling-i-mean-ruby-method/</loc>
+    <loc>http://thinkingco.de/techblog/whos-calling-i-mean-ruby-method/</loc>
     <lastmod>2012-10-03T02:33:24+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/techblog/start-vsphere-machine-from-osx/</loc>
+    <loc>http://thinkingco.de/techblog/start-vsphere-machine-from-osx/</loc>
     <lastmod>2012-09-11T02:33:24+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/techblog/eventmachine-serialport/</loc>
+    <loc>http://thinkingco.de/techblog/eventmachine-serialport/</loc>
     <lastmod>2012-09-06T02:33:24+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/techblog/rails-3-is_documentable-with-activeadmin/</loc>
+    <loc>http://thinkingco.de/techblog/rails-3-is_documentable-with-activeadmin/</loc>
     <lastmod>2012-07-11T02:33:24+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/techblog/realtime-dashboard-ruby-eventmachine-and-d3-js/</loc>
+    <loc>http://thinkingco.de/techblog/realtime-dashboard-ruby-eventmachine-and-d3-js/</loc>
     <lastmod>2012-06-30T02:33:24+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/techblog/my-website-stack-wnws/</loc>
+    <loc>http://thinkingco.de/techblog/my-website-stack-wnws/</loc>
     <lastmod>2012-06-08T02:33:24+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/techblog/thinking-code/</loc>
+    <loc>http://thinkingco.de/techblog/thinking-code/</loc>
     <lastmod>2012-06-06T02:33:24+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/me/my-life/</loc>
+    <loc>http://thinkingco.de/me/my-life/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/me/my-job/</loc>
+    <loc>http://thinkingco.de/me/my-job/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
