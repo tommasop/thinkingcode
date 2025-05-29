@@ -2,16 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-        "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+/* Base styles for the vintage newspaper theme */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Times New Roman', serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+  }
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
+/* Custom components */
+@layer components {
+  .newspaper-section {
+    @apply border border-black bg-white p-4 m-2;
+  }
+  
+  .newspaper-headline {
+    @apply font-serif font-bold text-black;
+  }
+  
+  .newspaper-body {
+    @apply font-serif text-sm leading-relaxed;
+  }
+  
+  .newspaper-border {
+    @apply border-2 border-black;
+  }
+  
+  .newspaper-dashed {
+    @apply border-2 border-dashed border-black;
+  }
+}
+
+/* Utilities */
+@layer utilities {
+  .text-newspaper {
+    color: #000000;
+  }
+  
+  .bg-newspaper {
+    background-color: #ffffff;
+  }
+  
+  .border-newspaper {
+    border-color: #000000;
+  }
 }
